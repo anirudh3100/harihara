@@ -1,59 +1,40 @@
 export interface Project {
-  id: number;
+  id: string;
   title: string;
   description: string;
   image: string;
-  category: string;
   status: 'ongoing' | 'completed';
-  details: string;
-  specifications: {
-    flooring: string;
-    walls: string;
-    bathrooms: string;
-    kitchen: string;
-    windows: string;
-    doors: string;
-    electrical: string;
-    tvTelephone: string;
-    additionalFeatures?: string[];
-  };
+  location: string;
+  price: string;
+  category: string;
   buildingSpecs: {
     powerBackup: string;
     lifts: string;
-    fireSafety: string;
-    carWash: string;
-    evCharging: string;
-    parking: string;
     security: string;
-    additionalAmenities?: string[];
   };
-  amenityImages: {
+  realEstateSpecs: {
+    totalUnits: string;
+    unitTypes: string;
+    totalArea: string;
+    possessionDate: string;
+  };
+  amenities: string[];
+  connectivity: {
+    title: string;
+    items: string[];
+  }[];
+  specifications: {
+    title: string;
+    items: string[];
+  }[];
+  floorPlans: {
     title: string;
     image: string;
-    description: string;
   }[];
-  locationAdvantages: {
-    schools: {
-      name: string;
-      distance: string;
-      type: string;
-    }[];
-    offices: {
-      name: string;
-      distance: string;
-      type: string;
-    }[];
-    stores: {
-      name: string;
-      distance: string;
-      type: string;
-    }[];
-    hospitals: {
-      name: string;
-      distance: string;
-      type: string;
-    }[];
-  };
+  masterPlan: string;
+  reraNumber: string;
+  size: string;
+  type: string;
 }
 
 export interface NewsItem {
@@ -66,312 +47,346 @@ export interface NewsItem {
 
 export const projects: Project[] = [
   {
-    id: 1,
-    title: "Sri Sai Viradhya Luxurious 3BHK Flats at UPPAL",
-    description: "Your Dream home is ready to move Live the Life You Love",
-    image: "https://hariharaestates.com/wp-content/uploads/2024/03/1.jpeg",
-    category: "Luxurious Club House | Swimming Pool | Half Basketball Court | Skating Area | Car Washing Facility | Elder's Sitting  Area | Vastu Compliant | ",
+    id: "1",
+    title: "Sri Sai Viradhya",
+    description: "Spread across 2.06 acres, Viradhya is a modern residential project located at Uppal. It is the only 10 floor residential gated community in the neighbourhood, offering a perfect blend of luxury and convenience.",
+    image: "/srisaiviradhya/main.jpeg",
     status: "ongoing",
-    details: "A comprehensive smart city solution that integrates IoT sensors, data analytics, and automated systems to improve urban living. The project focuses on traffic management, waste management, and energy efficiency.",
-    specifications: {
-      flooring: "Premium Italian marble in living areas, engineered wood in bedrooms",
-      walls: "Premium emulsion paint with textured finish and designer wallpapers in bedrooms",
-      bathrooms: "Premium sanitary ware with modern fixtures, anti-skid tiles, and glass partitions",
-      kitchen: "Modular kitchen with granite countertop, soft-close cabinets, and built-in appliances",
-      windows: "UPVC windows with safety grills and mosquito mesh",
-      doors: "Teak wood frame with veneer finish, digital locks for main door",
-      electrical: "Modular switches with copper wiring, LED lighting throughout",
-      tvTelephone: "Points in all rooms with high-speed internet provision",
-      additionalFeatures: [
-        "Smart home automation system",
-        "Built-in wardrobes in all bedrooms",
-        "Balcony with premium railing"
-      ]
-    },
+    location: "Uppal, Hyderabad",
+    price: "₹ 1.25 Cr Onwards*",
+    category: "Swimming Pool|Gym|Security|Club House|Children's Play Area|Indoor Games|Temple|Parking",
     buildingSpecs: {
-      powerBackup: "100% power backup with smart grid integration and solar panels",
-      lifts: "High-speed elevators with smart access control and emergency backup",
-      fireSafety: "Advanced fire detection and sprinkler system with smoke detectors",
-      carWash: "Automated car wash facility with water recycling system",
-      evCharging: "EV charging points in parking with smart metering",
-      parking: "Multi-level automated parking system with RFID access",
-      security: "24/7 CCTV surveillance with AI-based monitoring and security personnel",
-      additionalAmenities: [
-        "Swimming pool with temperature control",
-        "Fully equipped gymnasium",
-        "Indoor sports complex"
-      ]
+      powerBackup: "100% DG backup for lights and fans",
+      lifts: "High speed automatic passenger/service lifts",
+      security: "24/7 security with surveillance cameras"
     },
-    amenityImages: [
+    realEstateSpecs: {
+      totalUnits: "180",
+      unitTypes: "3 BHK",
+      totalArea: "2.06 Acres",
+      possessionDate: "Ready To Move"
+    },
+    amenities: [
+      "Swimming Pool",
+      "Gym",
+      "Security",
+      "Club House",
+      "Children's Play Area",
+      "Indoor Games",
+      "Temple",
+      "Parking"
+    ],
+    connectivity: [
       {
-        title: "Swimming Pool",
-        image: "https://hariharaestates.com/wp-content/uploads/2022/12/SWIMMING-POOL-min-min.jpg",
-        description: "Temperature controlled infinity pool with separate kids section"
+        title: "Schools",
+        items: [
+          "Kiran International School (5 min)",
+          "Global Indian International School (5 min)",
+          "Kendriya Vidyalaya (10 min)",
+          "Siddhartha Public School (5 min)",
+          "Sri Chaitanya Techno School (5 min)"
+        ]
       },
       {
-        title: "GYM",
-        image: "https://hariharaestates.com/wp-content/uploads/2022/12/GYM-min-1024x576-min.png",
-        description: "State-of-the-art clubhouse with multiple recreational facilities"
+        title: "Offices",
+        items: [
+          "Infosys (25 min)",
+          "Genpact (15 min)",
+          "Survey Of India (10 min)",
+          "NGRI (15 min)"
+        ]
       },
       {
-        title: "Sports Complex",
-        image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
-        description: "Indoor sports complex with basketball and badminton courts"
+        title: "Stores",
+        items: [
+          "Big Bazaar (2 min)",
+          "Asian Cine Square (10 min)",
+          "Decathon Sports (2 min)",
+          "Metro Super Market (10 min)"
+        ]
+      },
+      {
+        title: "Hospitals",
+        items: [
+          "Spark Hospitals (15 min)",
+          "Ankura Hospital (2 min)",
+          "Aditya Hospital (5 min)",
+          "Apex Hospital (5 min)"
+        ]
       }
     ],
-    locationAdvantages: {
-      schools: [
-        { name: "Kiran International School", distance: "1.2 km", type: "International" },
-        { name: "Global Indian International School", distance: "2.5 km", type: "CBSE" },
-        { name: "Kendriya Vidyalaya", distance: "3.1 km", type: "CBSE" }
-      ],
-      offices: [
-        { name: "Infosys ", distance: "8.5 km", type: "IT Hub" },
-        { name: "Genpact ", distance: "10.2 km", type: "Business District" },
-        { name: "Uppal Business Park", distance: "2.8 km", type: "Commercial Zone" }
-      ],
-      stores: [
-        { name: "Big Bazaar", distance: "1.5 km", type: "Supermarket" },
-        { name: "Asian Cine Square ", distance: "3.2 km", type: "Shopping Mall" },
-        { name: "Metro Super Market", distance: "0.8 km", type: "Daily Needs" }
-      ],
-      hospitals: [
-        { name: "Spark Hospitals", distance: "4.2 km", type: "Multi-specialty" },
-        { name: "Ankura Hospital", distance: "3.8 km", type: "Multi-specialty" },
-        { name: "Aditya Hospital", distance: "1.2 km", type: "General" }
-      ]
-    }
-  },
-  {
-    id: 2,
-    title: "SRI SAI KAKATIYA Exclusive 2 BHK & 3 BHK Flats at POCHARAM",
-    description: "Unmatched Lifestyle Unbeatable Price",
-    image: "https://hariharaestates.com/wp-content/uploads/2024/03/CAM08-HQ-Large.png",
-    category: "Luxurious Club House | Swimming Pool | Half Basketball Court | Badminton Court | Gym | Dinning Hall | Walking Track | Children's Play Area",
-    status: "ongoing",
-    details: "Helping organizations embrace digital technologies to streamline operations, enhance customer experience, and drive innovation across all business units.",
-    specifications: {
-      flooring: "Vitrified tiles with wooden laminate in bedrooms",
-      walls: "Smooth finish with designer wallpaper option and textured paint",
-      bathrooms: "Contemporary fixtures with glass partitions and anti-skid flooring",
-      kitchen: "Modern kitchen with stainless steel sink and modular cabinets",
-      windows: "Aluminum sliding windows with mosquito mesh and safety grills",
-      doors: "Solid core flush doors with premium hardware",
-      electrical: "Concealed wiring with LED lighting and smart switches",
-      tvTelephone: "Multiple points with fiber optic connectivity",
-      additionalFeatures: [
-        "Built-in wardrobes",
-        "Balcony with premium railing",
-        "Utility area in kitchen"
-      ]
-    },
-    buildingSpecs: {
-      powerBackup: "Diesel generator backup for essential services",
-      lifts: "Smart elevators with destination control and emergency lighting",
-      fireSafety: "Fire alarm and evacuation system with smoke detectors",
-      carWash: "Manual car wash facility with water recycling",
-      evCharging: "Dedicated EV charging stations with smart metering",
-      parking: "Reserved parking spaces with RFID access and visitor parking",
-      security: "Biometric access control and security personnel with CCTV",
-      additionalAmenities: [
-        "Children's play area",
-        "Senior citizen's corner",
-        "Community hall"
-      ]
-    },
-    amenityImages: [
+    specifications: [
       {
-        title: "Swimming Pool",
-        image: "https://hariharaestates.com/wp-content/uploads/2022/12/Swimming-Pool-10-min.png",
-        description: "Temperature controlled infinity pool with separate kids section"
+        title: "Flat Specifications",
+        items: [
+          "800 x 800 mm vitrified tiles",
+          "Cement blocks with 8\" thick external walls",
+          "Premium CP fittings",
+          "Granite counter top in kitchen",
+          "UPVC sliding windows",
+          "Teakwood doors",
+          "Concealed copper wiring",
+          "TV and data points"
+        ]
       },
       {
-        title: "Children Play Area",
-        image: "https://hariharaestates.com/wp-content/uploads/2022/12/Swimming-Pool-8-min.png",
-        description: "State-of-the-art clubhouse with multiple recreational facilities"
-      },
-      {
-        title: "Sports Complex",
-        image: "https://hariharaestates.com/wp-content/uploads/2022/12/Swimming-Pool-11-min.png",
-        description: "Indoor sports complex with basketball and badminton courts"
+        title: "Building Specifications",
+        items: [
+          "100% DG backup",
+          "High speed lifts",
+          "Fire safety system",
+          "Car wash facility",
+          "Electric charging station",
+          "Basement parking",
+          "24/7 security"
+        ]
       }
     ],
-    locationAdvantages: {
-      schools: [
-        { name: "Kiran International School", distance: "1.2 km", type: "International" },
-        { name: "Global Indian International School", distance: "2.5 km", type: "CBSE" },
-        { name: "Kendriya Vidyalaya", distance: "3.1 km", type: "CBSE" }
-      ],
-      offices: [
-        { name: "Infosys ", distance: "8.5 km", type: "IT Hub" },
-        { name: "Genpact ", distance: "10.2 km", type: "Business District" },
-        { name: "Uppal Business Park", distance: "2.8 km", type: "Commercial Zone" }
-      ],
-      stores: [
-        { name: "Big Bazaar", distance: "1.5 km", type: "Supermarket" },
-        { name: "Asian Cine Square ", distance: "3.2 km", type: "Shopping Mall" },
-        { name: "Metro Super Market", distance: "0.8 km", type: "Daily Needs" }
-      ],
-      hospitals: [
-        { name: "Spark Hospitals", distance: "4.2 km", type: "Multi-specialty" },
-        { name: "Ankura Hospital", distance: "3.8 km", type: "Multi-specialty" },
-        { name: "Aditya Hospital", distance: "1.2 km", type: "General" }
-      ]
-    }
-  },
-  {
-    id: 3,
-    title: "Vasant Villas Premium 4 BHK Triplex Villas At KEESARA",
-    description: "Experience The Pinnacle of Living",
-    image: "https://hariharaestates.com/wp-content/uploads/2024/03/223-EAST-VILLA-HQ-Large.png",
-    category: "Luxurious Club House | Retail Supermarket | Swimming Pool | Banquet Hall | Premium Landscape | Creche For Children | A/C Gym | Conference Room",
-    status: "ongoing",
-    details: "Implementation of solar and wind energy solutions for commercial buildings, including energy storage systems and smart grid integration.",
-    specifications: {
-      flooring: "Anti-skid tiles with marble flooring in living areas",
-      walls: "Weather-proof exterior paint with premium interior finishes",
-      bathrooms: "Water-efficient fixtures with premium fittings and glass enclosures",
-      kitchen: "Spacious kitchen with utility area and modular design",
-      windows: "Double glazed windows for insulation and noise reduction",
-      doors: "Security doors with digital locks and premium hardware",
-      electrical: "Solar-ready electrical system with smart home integration",
-      tvTelephone: "Smart home compatible wiring with fiber optic connectivity",
-      additionalFeatures: [
-        "Private garden area",
-        "Servant's quarter",
-        "Home automation system"
-      ]
-    },
-    buildingSpecs: {
-      powerBackup: "Solar power backup with battery storage and grid integration",
-      lifts: "Energy-efficient smart elevators with emergency backup",
-      fireSafety: "Comprehensive fire safety system with smoke detectors",
-      carWash: "Eco-friendly car wash station with water recycling",
-      evCharging: "Solar-powered EV charging points with smart metering",
-      parking: "Covered parking with solar panels and visitor parking",
-      security: "Integrated security management system with 24/7 monitoring",
-      additionalAmenities: [
-        "Private swimming pool",
-        "Tennis court",
-        "Clubhouse with restaurant"
-      ]
-    },
-    amenityImages: [
-      {
-        title: "West Facing Villa",
-        image: "https://hariharaestates.com/wp-content/uploads/2023/04/223-SYD-WEST-FACING-VILLA-PLANS-Large-min.png",
-        description: ""
-      },
-      {
-        title: "East Facing Villa",
-        image: "https://hariharaestates.com/wp-content/uploads/2023/04/223-SYD-EAST-FACING-VILLA-PLANS-1-Large-min.png",
-        description: ""
-      },
-      {
-        title: "Master Plan",
-        image: "https://hariharaestates.com/wp-content/uploads/2023/05/VILLAS-MASTER-PLAN-BROUCHER-Custom-min-2048x1225.jpg",
-        description: ""
-      }
+    floorPlans: [
+      { title: "Floor plan", image: "/srisaiviradhya/1.jpeg" },
+      { title: "Floor plan", image: "/srisaiviradhya/2.jpeg" },
+      { title: "Floor plan", image: "/srisaiviradhya/3.jpeg" },
+      { title: "Floor plan", image: "/srisaiviradhya/4.jpeg" },
+      { title: "Floor plan", image: "/srisaiviradhya/5.jpeg" },
+      { title: "Floor plan", image: "/srisaiviradhya/6.jpeg" },
+      { title: "Floor plan", image: "/srisaiviradhya/7.jpeg" },
+      
     ],
-    locationAdvantages: {
-      schools: [
-        { name: "Delhi Public School", distance: "1.2 km", type: "International" },
-        { name: "St. Mary's High School", distance: "2.5 km", type: "CBSE" },
-        { name: "Narayana Concept School", distance: "3.1 km", type: "CBSE" }
-      ],
-      offices: [
-        { name: "HITEC City", distance: "8.5 km", type: "IT Hub" },
-        { name: "Financial District", distance: "10.2 km", type: "Business District" },
-        { name: "Uppal Business Park", distance: "2.8 km", type: "Commercial Zone" }
-      ],
-      stores: [
-        { name: "Big Bazaar", distance: "1.5 km", type: "Supermarket" },
-        { name: "City Center Mall", distance: "3.2 km", type: "Shopping Mall" },
-        { name: "Local Market", distance: "0.8 km", type: "Daily Needs" }
-      ],
-      hospitals: [
-        { name: "Apollo Hospital", distance: "4.2 km", type: "Multi-specialty" },
-        { name: "Yashoda Hospital", distance: "3.8 km", type: "Multi-specialty" },
-        { name: "Local Clinic", distance: "1.2 km", type: "General" }
-      ]
-    }
+    masterPlan: "/srisaiviradhya/Masterplan.jpg",
+    reraNumber: "P02200003663",
+    size: "1820 Sft - 2359 Sft",
+    type: "3 BHK"
   },
   {
-    id: 4,
-    title: "Sri Sai Yatika Luxurious 3 BHK Flats at PEERZADIGUDA",
-    description: "Resort Like Living !",
-    image: "https://hariharaestates.com/wp-content/uploads/2024/03/SAI-YATIKA-REAR-SIDE-VIEW-HQ-Large.png",
-    category: "World-Class Club House | Swimming Pool | Badminton Court | Mini Theatre | Conference Hall | Indoor Games | A/C Gymnasium",
+    id: "2",
+    title: "Sri Sai Kakatiya",
+    description: "Hari Hara's Sri Sai Kakatiya instantly captivates with its unique presence in Pocharam, boasting dramatic views along Hyderabad-Warangal NH 163 and an iconic eastern skyline.",
+    image: "/srisaikakatiya/main.png",
     status: "ongoing",
-    details: "Development of a state-of-the-art healthcare facility incorporating the latest medical technologies and patient care solutions.",
-    specifications: {
-      flooring: "Anti-bacterial flooring with premium finishes",
-      walls: "Easy-clean wall paint with designer accents",
-      bathrooms: "Senior-friendly bathroom fixtures with grab bars",
-      kitchen: "Modern pantry with appliances and utility area",
-      windows: "UV-protected windows with safety grills",
-      doors: "Wide doors for accessibility with premium hardware",
-      electrical: "Backup power system with smart controls",
-      tvTelephone: "Hospital-grade communication system",
-      additionalFeatures: [
-        "Accessible design features",
-        "Emergency call system",
-        "Medical room"
-      ]
-    },
+    location: "Pocharam, Hyderabad",
+    price: "₹ 70 Lakhs* Onwards",
+    category: "Cricket Practice Pitch|Mini Golf|Outdoor Fitness Station|Skating Rink|Swimming Pool|Gym|Security",
     buildingSpecs: {
-      powerBackup: "Uninterrupted power supply for critical areas with backup",
-      lifts: "Hospital beds compatible elevators with emergency backup",
-      fireSafety: "Advanced fire suppression system with smoke detectors",
-      carWash: "Sanitized vehicle cleaning facility with water recycling",
-      evCharging: "Priority EV charging for ambulances and visitors",
-      parking: "Emergency vehicle priority parking with visitor spaces",
-      security: "Multi-layer security with restricted access zones",
-      additionalAmenities: [
-        "Medical center",
-        "Pharmacy",
-        "Emergency response team"
-      ]
+      powerBackup: "100% DG backup for lights and fans",
+      lifts: "High speed automatic passenger/service lifts",
+      security: "24/7 security with surveillance cameras"
     },
-    amenityImages: [
+    realEstateSpecs: {
+      totalUnits: "360",
+      unitTypes: "2 & 3 BHK",
+      totalArea: "3 Acres",
+      possessionDate: "Under Construction"
+    },
+    amenities: [
+      "Cricket Practice Pitch",
+      "Mini Golf",
+      "Outdoor Fitness Station",
+      "Skating Rink",
+      "Swimming Pool",
+      "Gym",
+      "Security"
+    ],
+    connectivity: [
       {
         title: "Connectivity",
-        image: "https://hariharaestates.com/wp-content/uploads/2024/04/conectivity-Large-min-1024x574.png",
-        description: "Nearest necessary places that are available in the area"
-      },
-      {
-        title: "Club House",
-        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
-        description: "State-of-the-art clubhouse with multiple recreational facilities"
-      },
-      {
-        title: "Sports Complex",
-        image: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
-        description: "Indoor sports complex with basketball and badminton courts"
+        items: [
+          "Shamshabad Airport",
+          "Uppal Metro Station",
+          "Uppal Bus Station",
+          "200M From Warangal Highway",
+          "Secunderabad Railway Station"
+        ]
       }
     ],
-    locationAdvantages: {
-      schools: [
-        { name: "Princeton Institute of Engineering and Technologies", distance: "1.2 km", type: "College" },
-        { name: "Rotterdam International Schools", distance: "2.5 km", type: "International" },
-        { name: "Kendriya Vidyalaya", distance: "3.1 km", type: "CBSE" }
-      ],
-      offices: [
-        { name: "Infosys SEZ Campus ", distance: "8.5 km", type: "IT Hub" },
-        { name: "Mind Space – Pocharam ", distance: "10.2 km", type: "IT Hub" },
-        { name: "Singapore Township ", distance: "2.8 km", type: "Commercial Zone" }
-      ],
-      stores: [
-        { name: "Grill 9 Restaurant", distance: "1.5 km", type: "Restaurant" },
-        { name: "Asian Mukta A2 Cinemas, MJR Square ", distance: "3.2 km", type: "Cinemas" },
-        { name: "Hotel Tulip Grand", distance: "0.8 km", type: "Restaurant" }
-      ],
-      hospitals: [
-        { name: "Vajra Hospitals", distance: "4.2 km", type: "Multi-specialty" },
-        { name: "Cure Hospital", distance: "3.8 km", type: "Multi-specialty" },
-        { name: "Neelima Hospital", distance: "1.2 km", type: "General" }
-      ]
-    }
+    specifications: [
+      {
+        title: "Flat Specifications",
+        items: [
+          "Premium flooring",
+          "Cement blocks with 8\" thick external walls",
+          "Premium CP fittings",
+          "Granite counter top in kitchen",
+          "UPVC sliding windows",
+          "Teakwood doors",
+          "Concealed copper wiring",
+          "TV and data points"
+        ]
+      },
+      {
+        title: "Building Specifications",
+        items: [
+          "100% DG backup",
+          "High speed lifts",
+          "Fire safety system",
+          "Car wash facility",
+          "Electric charging station",
+          "Basement parking",
+          "24/7 security"
+        ]
+      }
+    ],
+    floorPlans: [
+      { title: "2 BHK", image: "/srisaikakatiya/BLOCK-A-TYPICAL-FLOOR-PLAN.png" },
+      { title: "3 BHK", image: "/srisaikakatiya/BLOCK-B-TYPICAL-FLOOR-PLAN.png" }
+    ],
+    masterPlan: "/srisaikakatiya/masterplan.png",
+    reraNumber: "P02200005594",
+    size: "1335 to 1600 sft",
+    type: "2 & 3 BHK"
+  },
+  {
+    id: "3",
+    title: "Vasant Villas",
+    description: "Experience luxury living at its finest with Vasant Villas, where every detail is crafted to perfection.",
+    image: "/vasantvillas/main.png",
+    status: "ongoing",
+    location: "East Hyderabad",
+    price: "₹ 1.5 Cr* Onwards",
+    category: "Swimming Pool|Gym|Security|Club House|Children's Play Area|Indoor Games|Temple|Parking",
+    buildingSpecs: {
+      powerBackup: "100% DG backup for lights and fans",
+      lifts: "High speed automatic passenger/service lifts",
+      security: "24/7 security with surveillance cameras"
+    },
+    realEstateSpecs: {
+      totalUnits: "120",
+      unitTypes: "3 & 4 BHK Villas",
+      totalArea: "5 Acres",
+      possessionDate: "Under Construction"
+    },
+    amenities: [
+      "Swimming Pool",
+      "Gym",
+      "Security",
+      "Club House",
+      "Children's Play Area",
+      "Indoor Games",
+      "Temple",
+      "Parking"
+    ],
+    connectivity: [
+      {
+        title: "Connectivity",
+        items: [
+          "Close to major highways",
+          "Easy access to metro stations",
+          "Well-connected to city center",
+          "Nearby shopping complexes"
+        ]
+      }
+    ],
+    specifications: [
+      {
+        title: "Villa Specifications",
+        items: [
+          "Premium flooring",
+          "Cement blocks with 8\" thick external walls",
+          "Premium CP fittings",
+          "Granite counter top in kitchen",
+          "UPVC sliding windows",
+          "Teakwood doors",
+          "Concealed copper wiring",
+          "TV and data points"
+        ]
+      },
+      {
+        title: "Building Specifications",
+        items: [
+          "100% DG backup",
+          "High speed lifts",
+          "Fire safety system",
+          "Car wash facility",
+          "Electric charging station",
+          "Basement parking",
+          "24/7 security"
+        ]
+      }
+    ],
+    floorPlans: [
+      { title: "3 BHK Villa", image: "/floor-plans/vasant-3bhk.jpg" },
+      { title: "4 BHK Villa", image: "/floor-plans/vasant-4bhk.jpg" }
+    ],
+    masterPlan: "/master-plans/vasant-villas.jpg",
+    reraNumber: "P02200005595",
+    size: "2500 to 3500 sft",
+    type: "3 & 4 BHK Villas"
+  },
+  {
+    id: "4",
+    title: "Sri Sai Yatika",
+    description: "Discover the perfect blend of comfort and luxury at Sri Sai Yatika, where modern living meets traditional values.",
+    image: "/srisaiviradhya/main.jpeg",
+    status: "ongoing",
+    location: "Uppal, Hyderabad",
+    price: "₹ 1.25 Cr Onwards*",
+    category: "Swimming Pool|Gym|Security|Club House|Children's Play Area|Indoor Games|Temple|Parking",
+    buildingSpecs: {
+      powerBackup: "100% DG backup for lights and fans",
+      lifts: "High speed automatic passenger/service lifts",
+      security: "24/7 security with surveillance cameras"
+    },
+    realEstateSpecs: {
+      totalUnits: "240",
+      unitTypes: "2 & 3 BHK",
+      totalArea: "3.5 Acres",
+      possessionDate: "Under Construction"
+    },
+    amenities: [
+      "Swimming Pool",
+      "Gym",
+      "Security",
+      "Club House",
+      "Children's Play Area",
+      "Indoor Games",
+      "Temple",
+      "Parking"
+    ],
+    connectivity: [
+      {
+        title: "Connectivity",
+        items: [
+          "Close to major highways",
+          "Easy access to metro stations",
+          "Well-connected to city center",
+          "Nearby shopping complexes"
+        ]
+      }
+    ],
+    specifications: [
+      {
+        title: "Flat Specifications",
+        items: [
+          "Premium flooring",
+          "Cement blocks with 8\" thick external walls",
+          "Premium CP fittings",
+          "Granite counter top in kitchen",
+          "UPVC sliding windows",
+          "Teakwood doors",
+          "Concealed copper wiring",
+          "TV and data points"
+        ]
+      },
+      {
+        title: "Building Specifications",
+        items: [
+          "100% DG backup",
+          "High speed lifts",
+          "Fire safety system",
+          "Car wash facility",
+          "Electric charging station",
+          "Basement parking",
+          "24/7 security"
+        ]
+      }
+    ],
+    floorPlans: [
+      { title: "2 BHK", image: "/floor-plans/yatika-2bhk.jpg" },
+      { title: "3 BHK", image: "/floor-plans/yatika-3bhk.jpg" }
+    ],
+    masterPlan: "/master-plans/yatika.jpg",
+    reraNumber: "P02200005596",
+    size: "1200 to 1800 sft",
+    type: "2 & 3 BHK"
   }
 ];
 

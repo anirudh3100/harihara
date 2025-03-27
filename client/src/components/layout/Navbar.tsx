@@ -20,7 +20,13 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/">
-              <a className="text-2xl font-bold text-white hover:text-[#00827f] transition-colors">Hari Hara</a>
+              <a className="flex items-center">
+                <img 
+                  src="/hariharalogo.png" 
+                  alt="Hari Hara Logo" 
+                  className="h-12 w-auto hover:opacity-90 transition-opacity"
+                />
+              </a>
             </Link>
           </div>
           

@@ -15,7 +15,12 @@ export default function Projects() {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
-          <Link key={project.id} href={`/project/${project.id}`}>
+          <Link key={project.id} href={
+            project.id === '1' ? '/sri-sai-viradhya' :
+            project.id === '2' ? '/sri-sai-kakatiya' :
+            project.id === '3' ? '/vasant-villas' :
+            project.id === '4' ? '/sri-sai-yatika' : '#'
+          }>
             <Card className="cursor-pointer hover:shadow-2xl transition-transform duration-300 bg-white border border-gray-200 transform hover:scale-105">
               <div className="aspect-video relative overflow-hidden rounded-t-lg">
                 <img

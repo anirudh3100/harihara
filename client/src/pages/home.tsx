@@ -93,7 +93,13 @@ export default function Home() {
     <CarouselContent>
       {projects.filter(p => p.status === 'ongoing').map((project) => (
         <CarouselItem key={project.id}>
-          <Link href={`/project/${project.id}`}>
+          <Link href={
+            project.id === '1' ? '/sri-sai-viradhya' :
+            project.id === '2' ? '/sri-sai-kakatiya' :
+            project.id === '3' ? '/vasant-villas' :
+            project.id === '4' ? '/sri-sai-yatika' :
+            `/project/${project.id}`
+          }>
             <Card className="cursor-pointer hover:shadow-lg transition-shadow bg-white border border-gray-200">
               <div className="grid md:grid-cols-2 gap-6 p-6">
                 {/* Left side - Image and Title */}
