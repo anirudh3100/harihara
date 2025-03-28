@@ -9,6 +9,7 @@ import About from "./pages/about";
 import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 import News from "./pages/news";
+import CompletedProjects from "./pages/completed-projects";
 import SriSaiViradhya from "./pages/SriSaiViradhya";
 import SriSaiKakatiya from "./pages/SriSaiKakatiya";
 import VasantVillas from "./pages/VasantVillas";
@@ -27,6 +28,7 @@ function App() {
             <Route path="/projects" component={Projects} />
             <Route path="/contact" component={Contact} />
             <Route path="/news" component={News} />
+            <Route path="/completed-projects" component={CompletedProjects} />
             <Route path="/sri-sai-viradhya" component={SriSaiViradhya} />
             <Route path="/sri-sai-kakatiya" component={SriSaiKakatiya} />
             <Route path="/vasant-villas" component={VasantVillas} />
