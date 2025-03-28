@@ -2,10 +2,13 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { MapPin, Home, Ruler, Calendar, Building2, Users, Trophy, Clock, Download, Phone, Mail } from "lucide-react";
 import { useState } from "react";
+
 import BrochureForm from "@/components/BrochureForm";
 
 export default function SriSaiKakatiya() {
   const [activeTab, setActiveTab] = useState('amenities');
+  
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fef5db] to-white">
@@ -51,6 +54,8 @@ export default function SriSaiKakatiya() {
         </div>
       </section>
 
+
+      
       {/* Project Highlights */}
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,6 +79,8 @@ export default function SriSaiKakatiya() {
         </div>
       </section>
       
+      
+    
 
       {/* Project Description */}
       <section className="py-20 bg-[#fef5db]">
@@ -107,6 +114,46 @@ export default function SriSaiKakatiya() {
           </div>
         </div>
       </section>
+
+      
+{/* youtubes */}
+      <section className="py-14 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      
+      {/* YouTube Video on the Left */}
+      <div className="relative">
+        <iframe 
+          className="w-full h-64 md:h-80 rounded-xl border-4 border-[#c8a16e]" 
+          src="https://www.youtube.com/embed/Ecev2vDX3Ag" 
+          
+          title="YouTube video player" 
+          frameBorder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      {/* Description on the Right */}
+      <div>
+        <h2 className="text-4xl font-bold text-[#c8a16e] mb-4">
+        The Ways of Royalty A Perfect Blend of Luxury and Comfort
+        </h2>
+        <p className="text-[#1c2841] text-lg leading-relaxed mb-4">
+        Discover the ultimate living experience at Sri Sai Kakatiya Gated Community in Pocharam – where luxury meets convenience, and every moment feels like a dream come true.
+
+
+        </p>
+        <p className="text-[#1c2841] text-lg leading-relaxed">
+        Choose from a selection of 2BHK and 3BHK flats thoughtfully designed to cater to your every need. With world-class amenities and a serene environment, Sri Sai Kakatiya offers the perfect blend of comfort and sophistication.
+
+
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
       {/* Amenities Section */}

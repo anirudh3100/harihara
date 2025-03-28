@@ -54,7 +54,7 @@ export const projects: Project[] = [
     status: "ongoing",
     location: "Uppal, Hyderabad",
     price: "₹ 1.25 Cr Onwards*",
-    category: "Swimming Pool|Gym|Security|Club House|Children's Play Area|Indoor Games|Temple|Parking",
+    category: "Swimming Pool, Gym, Security, Club House, Children's Play Area, Indoor Games, Temple, Parking",
     buildingSpecs: {
       powerBackup: "100% DG backup for lights and fans",
       lifts: "High speed automatic passenger/service lifts",
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     status: "ongoing",
     location: "Pocharam, Hyderabad",
     price: "₹ 70 Lakhs* Onwards",
-    category: "Cricket Practice Pitch|Mini Golf|Outdoor Fitness Station|Skating Rink|Swimming Pool|Gym|Security",
+    category: "Cricket Practice Pitch, Mini Golf, Outdoor Fitness Station, Skating Rink, Swimming Pool, Gym, Security",
     buildingSpecs: {
       powerBackup: "100% DG backup for lights and fans",
       lifts: "High speed automatic passenger/service lifts",
@@ -242,7 +242,7 @@ export const projects: Project[] = [
     status: "ongoing",
     location: "East Hyderabad",
     price: "₹ 1.5 Cr* Onwards",
-    category: "Swimming Pool|Gym|Security|Club House|Children's Play Area|Indoor Games|Temple|Parking",
+    category: "Swimming Pool, Gym, Security, Club House, Children's Play Area, Indoor Games, Temple, Parking",
     buildingSpecs: {
       powerBackup: "100% DG backup for lights and fans",
       lifts: "High speed automatic passenger/service lifts",
@@ -319,7 +319,7 @@ export const projects: Project[] = [
     status: "ongoing",
     location: "Uppal, Hyderabad",
     price: "₹ 1.25 Cr Onwards*",
-    category: "Swimming Pool|Gym|Security|Club House|Children's Play Area|Indoor Games|Temple|Parking",
+    category: "Swimming Pool, Gym, Security, Club House, Children's Play Area, Indoor Games, Temple, Parking",
     buildingSpecs: {
       powerBackup: "100% DG backup for lights and fans",
       lifts: "High speed automatic passenger/service lifts",

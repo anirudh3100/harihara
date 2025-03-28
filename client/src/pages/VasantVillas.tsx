@@ -155,24 +155,126 @@ export default function VasantVillas() {
               // Flat Specifications Section
               <div className="space-y-6">
                 {[
+                    {
+                      title: "FLOORING",
+                      image: "/icons/flooring.png",
+                      items: [
+                        <span><strong>Living, Dining Area & Staircase:</strong> Imported Marble.</span>,
+                        <span><strong>Family Lounge, Pooja Room, Foyer Areas, Kitchen, Bedrooms & Dressing Areas:</strong> 800x1600mm Vitrified Tiles of reputed make.</span>,
+                        <span><strong>Multi-Purpose Hall:</strong> Wooden Laminated Flooring.</span>,
+                        <span><strong>Bathrooms/Balcony/Deck Area/Store Room/Laundry/Utility Floor:</strong> Anti-skid vitrified tiles of reputed make.</span>,
+                      ],
+                    },
+                    {
+                      title: "DADOING",
+                      image: "/icons/dadoing.png",
+                      items: [
+                        <span><strong>Kitchen:</strong> Ceramic tiles up to 2’-0” height above the kitchen countertop, of reputed make.</span>,
+                        <span><strong>Bathrooms:</strong> Ceramic tiles of reputed make, up to 7’-0” height.</span>,
+                        <span><strong>Utilities:</strong> Ceramic tiles of reputed make, up to 3’-0” height.</span>,
+                      ],
+                    },
+                    {
+                      title: "BATHROOMS",
+                      image: "/icons/bathrooms.png",
+                      items: [
+                        <span>Washbasins in all bathrooms and powder rooms.</span>,
+                        <span>Diverter and Shower in all bathrooms except Powder Rooms.</span>,
+                        <span>EWC for all bathrooms and powder rooms of reputed make.</span>,
+                        <span>Premium CP fittings.</span>,
+                        <span>Power provision for geysers in all bathrooms.</span>,
+                      ],
+                    },
+                    {
+                      title: "KITCHEN",
+                      image: "/icons/kitchen.png",
+                      items: [
+                        <span><strong>Platform:</strong> Granite platform with stainless steel sink and swinging spout of reputed make.</span>,
+                      ],
+                    },
+                    {
+                      title: "ELECTRICAL",
+                      image: "/icons/electrical.png",
+                      items: [
+                        <span>Concealed copper wiring of reputed make.</span>,
+                        <span>Power outlets for air conditioners in the living room, family lounge, multipurpose hall, and all bedrooms.</span>,
+                        <span>Power outlet for cooking range chimney, refrigerator, microwave oven, mixer/grinder, and water purifier.</span>,
+                        <span>Power outlet for dishwasher in utility & washing machine in laundry.</span>,
+                        <span>Power supply for each unit.</span>,
+                        <span>Miniature Circuit Breakers (MCB) for each distribution board, of reputed make.</span>,
+                        <span>Switches of reputed make.</span>,
+                      ],
+                    },
+                    {
+                      title: "PAINTING",
+                      image: "/icons/painting.png",
+                      items: [
+                        <span><strong>External:</strong> Textured or putty with 2 coats of exterior emulsion paint.</span>,
+                        <span><strong>Internal:</strong> Premium Emulsion Paint of reputed make with roller finishing over luppam finish.</span>,
+                      ],
+                    },
+                    {
+                      title: "WALLS",
+                      image: "/icons/walls.png",
+                      items: [
+                        <span><strong>Structure:</strong> 8’’ thick external walls and 4” thick internal walls with Cement Blocks.</span>,
+                        <span><strong>Internal:</strong> Smooth cement plastering finish.</span>,
+                        <span><strong>External:</strong> Double coat cement plastering finish.</span>,
+                      ],
+                    },
+                    {
+                      title: "DOORS",
+                      image: "/icons/doors.png",
+                      items: [
+                        <span><strong>Main Door:</strong> Teakwood frame and hardwood teak veneer shutter with polish and SS hardware of reputed make.</span>,
+                        <span><strong>Internal Doors:</strong> Teakwood frame and Flush door shutter with both sides Laminate and SS hardware of reputed make.</span>,
+                        <span><strong>Bathroom Doors:</strong> Teakwood frame and Flush door shutter with PU Polish and SS hardware of reputed make.</span>,
+                        <span><strong>Balcony:</strong> UPVC sliding doors with plain glass & mosquito mesh of reputed make.</span>,
+                      ],
+                    },
+                    {
+                      title: "WINDOWS & GRILLS",
+                      image: "/icons/windows.png",
+                      items: [
+                        <span><strong>Windows:</strong> UPVC sliding windows with plain glass & mosquito mesh of reputed make.</span>,
+                        <span><strong>Grills:</strong> Aesthetically designed, Mild Steel (MS) grills with powder coat finish.</span>,
+                      ],
+                    },
+                    {
+                      title: "UTILITY & WASH",
+                      image: "/icons/utility.png",
+                      items: [
+                        <span><strong>Utility:</strong> Water inlet/outlet point for dishwasher and tap point for general washing.</span>,
+                        <span><strong>Laundry:</strong> Water inlet/outlet point for washing machine.</span>,
+                      ],
+                    },
+                    {
+                      title: "SMART HOME PROVISIONS",
+                      image: "/icons/smart-home.png",
+                      items: [
+                        <span>One bathroom occupancy sensor in the Master Bedroom and powder room on the Ground Floor.</span>,
+                        <span>One standalone biometric lock at the main door.</span>,
+                        <span>One standalone video door phone.</span>,
+                      ],
+                    },
+                  
+                  
                   {
-                    title: "FLOORING",
-                    image: "/icons/structure.png",
+                    title: "DADOING",
+                    image: "/icons/dadoing.png",
                     items: [
                       <span>
-                        <strong>Living/drawing, dining, all bedrooms & kitchen:</strong> 800 x 800 mm sized double-charged vitrified tiles of reputed
+                        <strong>Kitchen:</strong> Ceramic tiles up to 2’-0” height above the kitchen countertop, of reputed make.
                       </span>,
                       <span>
-                        <strong>Bathrooms/balcony/utility:</strong> Anti-skid vitrified/ceramic tiles of reputed make
+                        <strong>Bathrooms:</strong> Ceramic tiles of reputed make, up to 7’-0” height.
                       </span>,
                       <span>
-                        <strong>Corridors:</strong> Granite flooring / Full body vitrified tiles as per Architect's design
-                      </span>,
-                      <span>
-                        <strong>Staircase:</strong> Tandur Polished stone
+                        <strong>Utilities:</strong> Ceramic tiles of reputed make, up to 3’-0” height.
                       </span>,
                     ],
                   },
+                  
                   
                   {
                     title: "Bathrooms",
@@ -239,44 +341,39 @@ export default function VasantVillas() {
               // Building Specifications Section
               <div className="space-y-6">
                 {[
-                  {
-                    title: "POWER BACKUP",
-                    image: "/icons/power-backup.png",
-                    items: [
-                      <span><strong>DG backup</strong> for lights and fans (excluding ACs and geysers) (maximum of 12 points per flat)</span>,
-                      <span><strong>100% DG backup</strong> for common areas and service/utility areas</span>,
-                    ],
-                  },
-                  {
-                    title: "LIFTS",
-                    image: "/icons/lifts.png",
-                    items: [
-                      <span><strong>High-speed automatic passenger/service lifts</strong> with rescue devices of reputed make</span>,
-                      <span><strong>Lift lobby</strong> with vitrified tiles/granite as per Architect's design</span>,
-                    ],
-                  },
-                  {
-                    title: "FIRE & SAFETY",
-                    image: "/icons/fire-safety.png",
-                    items: [
-                      <span>Fire alarms, hydrants, and sprinklers installed as per the <strong>Fire Department regulations and norms</strong></span>,
-                    ],
-                  },
-                  {
-                    title: "PARKING",
-                    image: "/icons/parking.png",
-                    items: [
-                      <span>Entire parking designed to suit the <strong>requisite number of car parks</strong> at stilt and basement(s)</span>,
-                    ],
-                  },
-                  {
-                    title: "SECURITY",
-                    image: "/icons/security.png",
-                    items: [
-                      <span><strong>Sophisticated round-the-clock security system</strong></span>,
-                      <span>Surveillance cameras installed at the <strong>Security Main Gate</strong>, the entrance to each tower, passenger lifts, children's play area, and appropriate common areas</span>,
-                    ],
-                  },
+                 {
+                  title: "POWER BACKUP",
+                  image: "/icons/power-backup.png",
+                  items: [
+                    <span>DG backup for all lights, fans, and power points excluding heavy appliances like ACs, washing machines, dishwashers, and geysers.</span>,
+                    <span>100% DG backup for all common areas.</span>,
+                  ],
+                },
+                {
+                  title: "BILLING SYSTEMS",
+                  image: "/icons/billing.png",
+                  items: [
+                    <span>Prepaid Billing System for Electricity, DG, Water, and Maintenance.</span>,
+                  ],
+                },
+                {
+                  title: "SECURITY",
+                  image: "/icons/security.png",
+                  items: [
+                    <span>Sophisticated round-the-clock security system.</span>,
+                    <span>Intercom facility in all units, connecting to Security.</span>,
+                    <span>CC Cameras in appropriate common areas and the Club House.</span>,
+                    <span>Solar fencing along the boundary.</span>,
+                  ],
+                },
+                {
+                  title: "STRUCTURE",
+                  image: "/icons/structure.png",
+                  items: [
+                    <span>RCC Framed Structure designed to withstand wind and seismic loads.</span>,
+                  ],
+                },
+                  
                   
                 ].map((section, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 shadow-lg flex justify-between items-center">

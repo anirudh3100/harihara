@@ -2,27 +2,46 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { MapPin, Home, Ruler, Calendar, Building2, Users, Trophy, Clock, Download, Phone, Mail } from "lucide-react";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation"
 import BrochureForm from "@/components/BrochureForm";
 
 export default function SriSaiViradhya() {
   const [activeTab, setActiveTab] = useState('amenities');
-  
+  const plans = [
+    "/srisaiviradhya/3dplans/1.jpeg",
+    "/srisaiviradhya/3dplans/2.jpeg",
+    "/srisaiviradhya/3dplans/3.jpeg",
+    "/srisaiviradhya/3dplans/4.jpeg",
+    "/srisaiviradhya/3dplans/5.jpeg",
+    "/srisaiviradhya/3dplans/6.jpeg",
+    "/srisaiviradhya/3dplans/7.jpeg",
+    "/srisaiviradhya/3dplans/8.jpeg",
+    "/srisaiviradhya/3dplans/9.jpeg",
+    "/srisaiviradhya/3dplans/10.jpeg",
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fef5db] to-white">
       {/* Floating CTAs */}
       <div className="fixed bottom-8 left-8 z-50 flex flex-col gap-4">
-        {/* Download Brochure Button */}
-        <BrochureForm
-          projectName="Sri Sai Viradhya"
-          brochureUrl="/srisaikakatiya/Hariharas-Sri-Sai-Kakatiya-Brochure.pdf"
-        />
+  {/* Download Brochure Button */}
+  <BrochureForm
+    projectName="Sri Sai Viradhya"
+    brochureUrl="/srisaikakatiya/Hariharas-Sri-Sai-Kakatiya-Brochure.pdf"
+  />
 
-        {/* Enquire Now Button */}
-        <Button className="bg-[#1c2841] text-white rounded-full px-6 py-3 shadow-lg hover:bg-[#2a3b5c] transition-colors flex items-center gap-2">
-          <Phone className="w-5 h-5" />
-          Enquire Now
-        </Button>
-      </div>
+  {/* Enquire Now Button with Phone Number */}
+  <a href="tel:+919066832832">
+    <Button className="bg-[#1c2841] text-white rounded-full px-6 py-3 shadow-lg hover:bg-[#2a3b5c] transition-colors flex items-center gap-2">
+      <Phone className="w-5 h-5" />
+      Enquire Now
+    </Button>
+  </a>
+</div>
+
 
       {/* Hero Section */}
       <section className="relative min-h-[75vh] flex items-center justify-center bg-[#1c2841]">
@@ -69,24 +88,72 @@ export default function SriSaiViradhya() {
           </div>
         </div>
       </section>
-      
 
-      {/* Project Description */}
-      <section className="py-20 bg-[#fef5db]">
+ {/* Project Description */}
+      <section className="py-14 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      
+      {/* YouTube Video on the Left */}
+      <div className="relative">
+        <iframe 
+          className="w-full h-64 md:h-80 rounded-xl border-4 border-[#c8a16e]" 
+          src="https://www.youtube.com/embed/uD3f_q1xzDQ" 
+          
+          title="YouTube video player" 
+          frameBorder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      {/* Description on the Right */}
+      <div>
+        <h2 className="text-4xl font-bold text-[#c8a16e] mb-4">
+          Experience the Lifestyle Meant for You
+        </h2>
+        <p className="text-[#1c2841] text-lg leading-relaxed mb-4">
+          Imagine coming home to your perfect sanctuary at Sri Sai Viradhya in Uppal. 
+          It’s more than just a residence; it’s a haven where luxury meets convenience, 
+          nestled just 5 minutes from Uppal Metro Station.
+        </p>
+        <p className="text-[#1c2841] text-lg leading-relaxed">
+          With premium construction quality and thoughtful design, each corner of your 
+          home exudes warmth and elegance. Be part of this vibrant community, where your 
+          dream home awaits.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{/* Why you should consider Hari Hara's Sri Sai Viradhya */}
+<section className="py-20 bg-[#fef5db]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-[#1c2841] mb-8 relative">
-                Experience the Lifestyle Meant for You
-                <div className="absolute bottom-0 left-0 w-24 h-1 bg-[#00827f] rounded-full"></div>
-              </h2>
-              <p className="text-lg text-[#1c2841]/80 leading-relaxed mb-8">
-                Imagine coming home to your perfect sanctuary at Sri Sai Viradhya in Uppal. It's more than just a residence; it's a haven where luxury meets convenience, nestled just 5 minutes from Uppal Metro Station.
-              </p>
-              <p className="text-lg text-[#1c2841]/80 leading-relaxed">
-                With its premium construction quality and thoughtful design, each corner of your home exudes warmth and elegance. And when you step out of your spacious 3BHK flat, you're greeted by the gated community's lush greenery and serene ambiance.
-              </p>
-            </div>
+          <div>
+  <h2 className="text-3xl font-bold text-[#1c2841] mb-8 relative">
+    Why you should consider Hari Hara's Sri Sai Viradhya
+    <div className="absolute bottom-0 left-0 w-24 h-1 bg-[#00827f] rounded-full"></div>
+  </h2>
+  <p className="text-lg text-[#1c2841]/80 leading-relaxed mb-2 flex items-center">
+    <span className="text-[#00827f] text-xl mr-2">●</span> HMDA and RERA approved
+  </p>
+  <p className="text-lg text-[#1c2841]/80 leading-relaxed mb-2 flex items-center">
+    <span className="text-[#00827f] text-xl mr-2">●</span> 250 meters away from Hyderabad-Warangal highway             
+  </p>
+  <p className="text-lg text-[#1c2841]/80 leading-relaxed mb-2 flex items-center">
+    <span className="text-[#00827f] text-xl mr-2">●</span> Well connected to schools, colleges, offices, retail & shopping
+  </p>
+  <p className="text-lg text-[#1c2841]/80 leading-relaxed mb-2 flex items-center">
+    <span className="text-[#00827f] text-xl mr-2">●</span> 20 minutes drive to Infosys Pocharam
+  </p>
+  <p className="text-lg text-[#1c2841]/80 leading-relaxed mb-2 flex items-center">
+    <span className="text-[#00827f] text-xl mr-2">●</span> Well developed social infrastructure all around
+  </p>
+</div>
+
             <div className="grid grid-cols-1 gap-4">
               {[
                 "/srisaiviradhya/main.jpeg"
@@ -104,32 +171,65 @@ export default function SriSaiViradhya() {
         </div>
       </section>
 
+      {/* 3D Floor Plans */}
+      <section className="py-10 bg-[#fef5db]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-12">
+          3D Floor Plans
+        </h2>
+
+        {/* Swiper Carousel */}
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1} // Default (Mobile)
+          breakpoints={{
+            640: { slidesPerView: 2 }, // Tablets
+            1024: { slidesPerView: 3 }, // Larger Tablets
+            1280: { slidesPerView: 4 }  // Desktops (4 images at a time)
+          }}
+          navigation
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={true}
+          className="pb-10"
+        >
+          {plans.map((img, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+              <a href={img} target="_blank" rel="noopener noreferrer">
+      <img src={img} alt={`3D Plan ${index + 1}`} className="w-full h-50 object-cover cursor-pointer" />
+    </a>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+
 
       {/* Amenities Section */}
       <section className="py-24 bg-[#fef5db]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-12">
-            Amenities
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "Swimming pool", img: "/srisaiviradhya/Amenities/swimmingpool.jpg" },
-              { name: "Gym", img: "/srisaiviradhya/Amenities/Gym.png" },
-              { name: "24 hours Security", img: "/srisaiviradhya/Amenities/Security.png" },
-              { name: "Meeting room", img: "/srisaiviradhya/Amenities/meeting.jpg" },
-              { name: "Indoor games", img: "/srisaiviradhya/Amenities/indoor.png" },
-              { name: "Outdoor games", img: "/srisaiviradhya/Amenities/outdoorgames.jpg" }  
-            ].map((amenity, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                <img src={amenity.img} alt={amenity.name} className="w-full h-48 object-cover" />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold text-[#00827f]">{amenity.name}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-12">
+      Amenities
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { img: "/srisaiviradhya/Amenities/swimmingpool.jpg" },
+        { img: "/srisaiviradhya/Amenities/Gym.png" },
+        { img: "/srisaiviradhya/Amenities/Security.png" },
+        { img: "/srisaiviradhya/Amenities/meeting.jpg" },
+        { img: "/srisaiviradhya/Amenities/indoor.png" },
+        { img: "/srisaiviradhya/Amenities/outdoorgames.jpg" }
+      ].map((amenity, index) => (
+        <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+          <img src={amenity.img} alt={`Amenity ${index + 1}`} className="w-full h-55 object-cover" />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
 
       {/* Flat specifications & Building specifications */}
@@ -178,13 +278,29 @@ export default function SriSaiViradhya() {
                         <strong>Bathrooms/balcony/utility:</strong> Anti-skid vitrified/ceramic tiles of reputed make
                       </span>,
                       <span>
-                        <strong>Corridors:</strong> Granite flooring / Full body vitrified tiles as per Architect's design
+                        <strong>Corridors:</strong> Granite flooring as per architect design
                       </span>,
                       <span>
                         <strong>Staircase:</strong> Tandur Polished stone
                       </span>,
                     ],
                   },
+                  {
+                    title: "WALLS",
+                    image: "/icons/walls.png",
+                    items: [
+                      <span>
+                        <strong>Structure:</strong> Cement blocks with 8" thick external walls and 4" thick internal walls.
+                      </span>,
+                      <span>
+                        <strong>Internal:</strong> Smooth cement plastering finish.
+                      </span>,
+                      <span>
+                        <strong>External:</strong> Double coat cement plastering finish.
+                      </span>,
+                    ],
+                  },
+                  
                   
                   {
                     title: "Bathrooms",
@@ -192,7 +308,7 @@ export default function SriSaiViradhya() {
                     items: [
                         <span><strong>Wash basins</strong> in all bathrooms</span>,
                         <span><strong>Diverter and Shower</strong> in all bathrooms</span>,
-                        <span><strong>EWC</strong> for all bathrooms of reputed make</span>,
+                        <span><strong>wall-mounted WC</strong> in alltoilets of reputed make</span>,
                         <span><strong>CP fittings</strong> of reputed make</span>,
                         <span><strong>Power provision</strong> for geysers in all bathrooms</span>,
                       ],
@@ -221,13 +337,36 @@ export default function SriSaiViradhya() {
                     ],
                   },
                   {
-                    title: "PAINTING",
-                    image: "/icons/painting.png",
+                    title: "WINDOWS & GRILLS",
+                    image: "/icons/windows.png",
                     items: [
-                      <span><strong>External:</strong> Textured or putty with two coats of exterior emulsion paint</span>,
-                      <span><strong>Internal:</strong> Premium Emulsion Paint of reputed make with roller finishing over luppam finish</span>,
+                      <span>
+                        <strong>Windows:</strong> UPVC sliding windows with plain glass & mosquito mesh.
+                      </span>,
+                      <span>
+                        <strong>Grills:</strong> Aesthetically designed, Mild Steel (MS) grills with powder coat finish.
+                      </span>,
                     ],
                   },
+                  {
+                    title: "DOORS",
+                    image: "/icons/doors.png",
+                    items: [
+                      <span>
+                        <strong>Main Door:</strong> Teakwood frame and hardwood teak veneer shutter with polish and SS hardware of reputed make.
+                      </span>,
+                      <span>
+                        <strong>Bedroom Doors:</strong> Teakwood frame and flush door shutter with laminate finish and SS hardware of reputed make.
+                      </span>,
+                      <span>
+                        <strong>Toilet & Utility Doors:</strong> Teakwood frame and flush door with PU polish and SS hardware of reputed make.
+                      </span>,
+                      <span>
+                        <strong>Balcony:</strong> UPVC sliding doors with plain glass & mosquito mesh of reputed make.
+                      </span>,
+                    ],
+                  },
+                  
                   
                   
                 ].map((section, index) => (
@@ -253,12 +392,17 @@ export default function SriSaiViradhya() {
                 {[
                   {
                     title: "POWER BACKUP",
-                    image: "/icons/power-backup.png",
+                    image: "/icons/power.png",
                     items: [
-                      <span><strong>DG backup</strong> for lights and fans (excluding ACs and geysers) (maximum of 12 points per flat)</span>,
-                      <span><strong>100% DG backup</strong> for common areas and service/utility areas</span>,
+                      <span>
+                        <strong>Flats:</strong> 100% DG backup for lights and fans (excluding ACs, geysers, and other heavy appliances).
+                      </span>,
+                      <span>
+                        <strong>Common Areas & Utility:</strong> 100% DG backup for common areas and service/utility areas.
+                      </span>,
                     ],
-                  },
+                  }
+,                  
                   {
                     title: "LIFTS",
                     image: "/icons/lifts.png",
@@ -281,6 +425,26 @@ export default function SriSaiViradhya() {
                       <span>Entire parking designed to suit the <strong>requisite number of car parks</strong> at stilt and basement(s)</span>,
                     ],
                   },
+                  {
+                    title: "CAR WASH UTILITY",
+                    image: "/icons/car-wash.png",
+                    items: [
+                      <span>
+                        <strong>Facility:</strong> Provision for Car Wash facility in each cellar parking area.
+                      </span>,
+                    ],
+                  },
+                  {
+                    title: "ELECTRIC CHARGING STATION",
+                    image: "/icons/charging.png",
+                    items: [
+                      <span>
+                        <strong>Facility:</strong> Public Electric Charging Station will be provided at a feasible location in the car parking area.
+                      </span>,
+                    ],
+                  },
+                  
+                  
                   {
                     title: "SECURITY",
                     image: "/icons/security.png",

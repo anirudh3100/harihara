@@ -76,15 +76,15 @@ export default function SriSaiYatika() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold text-[#1c2841] mb-8 relative">
-                One of the best Gated Communities near you with 2bhk and 3bhk flats for sale
+              Explore Unmatched Luxury
                 <div className="absolute bottom-0 left-0 w-24 h-1 bg-[#00827f] rounded-full"></div>
               </h2>
               <p className="text-lg text-[#1c2841]/80 leading-relaxed mb-8">
-                Hari Hara's Sri Sai Yatika instantly captivates with its unique presence in Uppal, boasting dramatic views along Hyderabad-Warangal NH 163 and an iconic eastern skyline.
-              </p>
+              Welcome to Sri Sai Yatika, where luxury meets serenity across 2.85 acres of prime real estate. Rising majestically with 10 floors, Sri Sai Yatika offers a range of 3BHK homes, ranging from 1635 sq. ft. to 2435 sq. ft., each meticulously designed for your comfort and convenience.              </p>
               <p className="text-lg text-[#1c2841]/80 leading-relaxed">
-                This exclusive residence features 360 elegant flats across two 15-story towers, offering panoramic vistas and private terraces that showcase the area's beauty. The design marries a rich personality with sleek functionality, making every aspect of living here a testament to luxurious and thoughtful architecture.
-              </p>
+              At the heart of Sri Sai Yatika lies its exclusive 15000 sq. ft Club House, serving as the crowning jewel of this prestigious community. Designed to cater to your every need, the Club House is a sanctuary for pleasure and relaxation, offering a host of amenities to enrich your lifestyle.
+
+Experience the epitome of luxury living at Sri Sai Yatika. where every detail has been thoughtfully curated to elevate your living experience              </p>
             </div>
             <div className="grid grid-cols-1 gap-4">
               {[
@@ -166,65 +166,81 @@ export default function SriSaiYatika() {
                 {[
                   {
                     title: "FLOORING",
-                    image: "/icons/structure.png",
+                    image: "/icons/flooring.png",
                     items: [
-                      <span>
-                        <strong>Living/drawing, dining, all bedrooms & kitchen:</strong> 800 x 800 mm sized double-charged vitrified tiles of reputed
-                      </span>,
-                      <span>
-                        <strong>Bathrooms/balcony/utility:</strong> Anti-skid vitrified/ceramic tiles of reputed make
-                      </span>,
-                      <span>
-                        <strong>Corridors:</strong> Granite flooring / Full body vitrified tiles as per Architect's design
-                      </span>,
-                      <span>
-                        <strong>Staircase:</strong> Tandur Polished stone
-                      </span>,
+                      <span><strong>Living, Drawing:</strong> 1200mm x 600mm Vitrified Tiles of reputed make.</span>,
+                      <span><strong>Kitchen, Bedroom:</strong> 800mm x 800mm size Double Charged Vitrified Tiles of reputed make.</span>,
+                      <span><strong>Bathrooms, Balcony, Utility:</strong> Anti-skid Vitrified/Ceramic Tiles of reputed make.</span>,
+                      <span><strong>Corridors, Staircase:</strong> Granite flooring as per architect design, Tandoor Polished Stone.</span>,
                     ],
                   },
-                  
                   {
-                    title: "Bathrooms",
+                    title: "WALLS",
                     image: "/icons/walls.png",
                     items: [
-                        <span><strong>Wash basins</strong> in all bathrooms</span>,
-                        <span><strong>Diverter and Shower</strong> in all bathrooms</span>,
-                        <span><strong>EWC</strong> for all bathrooms of reputed make</span>,
-                        <span><strong>CP fittings</strong> of reputed make</span>,
-                        <span><strong>Power provision</strong> for geysers in all bathrooms</span>,
-                      ],
-                    
-                    
+                      <span><strong>Structure:</strong> 8″ thick external walls and 4″ thick internal walls with solid cement bricks.</span>,
+                      <span><strong>Internal Walls:</strong> Smooth Cement Plastering Finish.</span>,
+                      <span><strong>External Walls:</strong> Double coat Cement Plastering Finish.</span>,
+                    ],
                   },
                   {
-                    title: "KITCHEN UTILITIES",
+                    title: "BATHROOMS",
+                    image: "/icons/bathrooms.png",
+                    items: [
+                      <span>Wash basins in all bathrooms.</span>,
+                      <span>Diverter and Shower in all bathrooms.</span>,
+                      <span>EWC of reputed make for all bathrooms.</span>,
+                      <span>Premium CP fittings of reputed make.</span>,
+                      <span>Power provision for geysers in all bathrooms.</span>,
+                    ],
+                  },
+                  {
+                    title: "KITCHEN",
                     image: "/icons/kitchen.png",
                     items: [
-                      <span>
-                        <strong>Granite countertop</strong> with a single bowl stainless steel sink with bore water connection along with provision for <strong>water purifier</strong> and <strong>washing machine</strong>
-                      </span>,
+                      <span>Provision for Modular Kitchen.</span>,
+                      <span>Provision for Water Purifier, Chimney, and Ignition Stove.</span>,
+                      <span>Provision for Bore Water Connection in Kitchen and Utility Area.</span>,
+                      <span>Provision for Washing Machine in Utility Area.</span>,
+                    ],
+                  },
+                  {
+                    title: "WINDOWS & GRILLS",
+                    image: "/icons/windows.png",
+                    items: [
+                      <span><strong>Windows:</strong> UPVC Sliding Windows with Plain Glass & Mosquito Mesh of reputed make.</span>,
+                      <span><strong>Grills:</strong> Aesthetically designed, Mild Steel (MS) Grills with Powder Coat Finish.</span>,
+                    ],
+                  },
+                  {
+                    title: "DOORS",
+                    image: "/icons/doors.png",
+                    items: [
+                      <span><strong>Main Door:</strong> Teakwood Frame and Hardwood Teak Veneer Shutter with Polish and SS Hardware of reputed make.</span>,
+                      <span><strong>Bathroom Doors:</strong> Teakwood Doors and Flush Door Shutter with PU Polish and SS Hardware of reputed make.</span>,
+                      <span><strong>Balconies:</strong> UPVC Sliding Doors with Plain Glass & Mosquito Mesh of reputed make.</span>,
+                      <span><strong>Internal Doors:</strong> Teakwood Frame and Flush Door Shutter with both sides Laminated and SS Hardware of reputed make.</span>,
                     ],
                   },
                   {
                     title: "ELECTRICAL",
                     image: "/icons/electrical.png",
                     items: [
-                      <span><strong>Concealed copper wiring</strong> of reputed </span>,
-                      <span><strong>Power outlets</strong> for air conditioners in the living room and all bedrooms</span>,
-                      <span><strong>Power outlet</strong> for cooking range chimney, refrigerator, microwave oven, and mixer/grinder in kitchen</span>,
-                      <span><strong>Power supply</strong> for each unit</span>,
-                      <span><strong>Miniature Circuit Breakers (MCB)</strong> for each distribution board of reputed make</span>,
-                      <span><strong>Switches</strong> of reputed make</span>,
+                      <span>Concealed Copper Wiring of reputed make.</span>,
+                      <span>Power outlets for Air Conditioners in all Bedrooms.</span>,
+                      <span>Power outlets for Cooking Range Chimney, Refrigerator, Microwave Oven, Mixer/Grinder in Kitchen.</span>,
+                      <span>Power supply for each unit.</span>,
+                      <span>Miniature Circuit Breakers (MCB) for each Distribution Board, of reputed make.</span>,
+                      <span>Switches of reputed make.</span>,
                     ],
                   },
                   {
-                    title: "PAINTING",
-                    image: "/icons/painting.png",
+                    title: "TV & TELEPHONE",
+                    image: "/icons/tv.png",
                     items: [
-                      <span><strong>External:</strong> Textured or putty with two coats of exterior emulsion paint</span>,
-                      <span><strong>Internal:</strong> Premium Emulsion Paint of reputed make with roller finishing over luppam finish</span>,
+                      <span>One TV/Data Point in the Living Room/Drawing Room and Master Bedroom.</span>,
                     ],
-                  },
+                  },                
                   
                   
                 ].map((section, index) => (
@@ -248,44 +264,58 @@ export default function SriSaiYatika() {
               // Building Specifications Section
               <div className="space-y-6">
                 {[
-                  {
-                    title: "POWER BACKUP",
-                    image: "/icons/power-backup.png",
-                    items: [
-                      <span><strong>DG backup</strong> for lights and fans (excluding ACs and geysers) (maximum of 12 points per flat)</span>,
-                      <span><strong>100% DG backup</strong> for common areas and service/utility areas</span>,
-                    ],
-                  },
-                  {
-                    title: "LIFTS",
-                    image: "/icons/lifts.png",
-                    items: [
-                      <span><strong>High-speed automatic passenger/service lifts</strong> with rescue devices of reputed make</span>,
-                      <span><strong>Lift lobby</strong> with vitrified tiles/granite as per Architect's design</span>,
-                    ],
-                  },
-                  {
-                    title: "FIRE & SAFETY",
-                    image: "/icons/fire-safety.png",
-                    items: [
-                      <span>Fire alarms, hydrants, and sprinklers installed as per the <strong>Fire Department regulations and norms</strong></span>,
-                    ],
-                  },
-                  {
-                    title: "PARKING",
-                    image: "/icons/parking.png",
-                    items: [
-                      <span>Entire parking designed to suit the <strong>requisite number of car parks</strong> at stilt and basement(s)</span>,
-                    ],
-                  },
-                  {
-                    title: "SECURITY",
-                    image: "/icons/security.png",
-                    items: [
-                      <span><strong>Sophisticated round-the-clock security system</strong></span>,
-                      <span>Surveillance cameras installed at the <strong>Security Main Gate</strong>, the entrance to each tower, passenger lifts, children's play area, and appropriate common areas</span>,
-                    ],
-                  },
+                 {
+                  title: "POWER BACKUP",
+                  image: "/icons/power-backup.png",
+                  items: [
+                    <span>DG backup for all lights and fans (excluding heavy appliances like ACs, geysers, washing machines, and dishwashers).</span>,
+                    <span>100% DG backup for common areas and service/utility areas.</span>,
+                  ],
+                },
+                {
+                  title: "LIFTS",
+                  image: "/icons/lift.png",
+                  items: [
+                    <span>High-speed automatic passenger/service lifts with a rescue device of reputed make.</span>,
+                    <span>Lift lobby with Vitrified Tiles / Granite.</span>,
+                  ],
+                },
+                {
+                  title: "FIRE & SAFETY",
+                  image: "/icons/fire-safety.png",
+                  items: [
+                    <span>Fire alarms, hydrants, and sprinklers as per fire regulation norms.</span>,
+                  ],
+                },
+                {
+                  title: "CAR WASH UTILITY",
+                  image: "/icons/car-wash.png",
+                  items: [
+                    <span>Provision for a Car Wash Facility in each cellar parking area.</span>,
+                  ],
+                },
+                {
+                  title: "ELECTRIC CHARGING STATION",
+                  image: "/icons/charging-station.png",
+                  items: [
+                    <span>A public electric charging station provided at a feasible location in the car parking area.</span>,
+                  ],
+                },
+                {
+                  title: "PARKING",
+                  image: "/icons/parking.png",
+                  items: [
+                    <span>Entire parking is designed to suit the requisite number of car parks at stilt and cellar levels as per the sanctioned plan.</span>,
+                  ],
+                },
+                {
+                  title: "SECURITY",
+                  image: "/icons/security.png",
+                  items: [
+                    <span>Sophisticated round-the-clock security system.</span>,
+                    <span>Surveillance cameras at the main security gate, entrance lobby of all wings, clubhouse, passenger lifts, children’s play area, and other appropriate common areas.</span>,
+                  ],
+                },
                   
                 ].map((section, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 shadow-lg flex justify-between items-center">
