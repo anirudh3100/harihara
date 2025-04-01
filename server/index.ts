@@ -34,7 +34,7 @@ app.get("/googlef8b37f11528319b3.html", (req, res) => {
   }
 
   const port = process.env.PORT || 5000;
-  server.listen(port, () => {
+  server.listen({ port, host: "0.0.0.0", reusePort: true }, () => {
     log(`serving on port ${port}`);
   });
 
