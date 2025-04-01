@@ -1,9 +1,13 @@
 export interface Project {
   id: string;
   title: string;
+  link: string;
   description: string;
+  description2: string;
+  description3: string;
   image: string;
   status: 'ongoing' | 'completed';
+  houseType: string;
   location: string;
   price: string;
   category: string;
@@ -35,6 +39,9 @@ export interface Project {
   reraNumber: string;
   size: string;
   type: string;
+  flatSizes: string;  
+  clubHouse: string;
+  possessionDate: string;
 }
 
 export interface NewsItem {
@@ -49,9 +56,13 @@ export const projects: Project[] = [
   {
     id: "1",
     title: "Sri Sai Viradhya",
+    link: "sri-sai-viradhya",
     description: "Spread across 2.06 acres, Viradhya is a modern residential project located at Uppal. It is the only 10 floor residential gated community in the neighbourhood, offering a perfect blend of luxury and convenience.",
+    description2: "Your Dream house is ready to move",  
+    description3: "Live the Life You Love",
     image: "/srisaiviradhya/main.jpeg",
-    status: "ongoing",
+    status: "ongoing",    
+    houseType: "3 BHK",
     location: "Uppal, Hyderabad",
     price: "₹ 1.25 Cr Onwards*",
     category: "Swimming Pool, Gym, Security, Club House, Children's Play Area, Indoor Games, Temple, Parking",
@@ -154,16 +165,23 @@ export const projects: Project[] = [
     ],
     masterPlan: "/srisaiviradhya/Masterplan.jpg",
     reraNumber: "P02200003663",
-    size: "1820 Sft - 2359 Sft",
-    type: "3 BHK"
+    size: "2 Acres",
+    flatSizes: "1820 Sft - 2359 Sft",
+    type: "3 BHK",
+    clubHouse: "12500 SFT",
+    possessionDate: "Ready To Move"
   },
   {
     id: "2",
     title: "Sri Sai Kakatiya",
+    link: "sri-sai-kakatiya",
     description: "Hari Hara's Sri Sai Kakatiya instantly captivates with its unique presence in Pocharam, boasting dramatic views along Hyderabad-Warangal NH 163 and an iconic eastern skyline.",
+    description2: "Unmatched Lifestyle Unbeatable Price",
+    description3: "2BHK & 3BHK Starting From 70 Lakhs",
     image: "/srisaikakatiya/main.png",
     status: "ongoing",
     location: "Pocharam, Hyderabad",
+    houseType: "2 BHK & 3 BHK",
     price: "₹ 70 Lakhs* Onwards",
     category: "Cricket Practice Pitch, Mini Golf, Outdoor Fitness Station, Skating Rink, Swimming Pool, Gym, Security",
     buildingSpecs: {
@@ -231,15 +249,22 @@ export const projects: Project[] = [
     ],
     masterPlan: "/srisaikakatiya/masterplan.png",
     reraNumber: "P02200005594",
-    size: "1335 to 1600 sft",
-    type: "2 & 3 BHK"
+    size: "3 Acres",
+    flatSizes: "1335 Sft - 1600 Sft",
+    type: "2 & 3 BHK",
+    clubHouse: "15000 SFT",
+    possessionDate: "Ready To Move"
   },
   {
     id: "3",
     title: "Vasant Villas",
+    link: "vasant-villas",
     description: "Experience luxury living at its finest with Vasant Villas, where every detail is crafted to perfection.",
-    image: "/vasantvillas/main.png",
+    description2: "Experience The Pinnacle of Living",
+    description3: "Luxurious 4BHK Triplex Villas",
+    image: "/vasantvillas/main2.png",
     status: "ongoing",
+    houseType: "4 BHK Triplex Villas",
     location: "East Hyderabad",
     price: "₹ 1.5 Cr* Onwards",
     category: "Swimming Pool, Gym, Security, Club House, Children's Play Area, Indoor Games, Temple, Parking",
@@ -308,17 +333,24 @@ export const projects: Project[] = [
     ],
     masterPlan: "/master-plans/vasant-villas.jpg",
     reraNumber: "P02200005595",
-    size: "2500 to 3500 sft",
-    type: "3 & 4 BHK Villas"
+    size: "Triplex villas 69",
+    flatSizes: "2500 Sft - 3500 Sft",
+    type: "3 & 4 BHK Villas",
+    clubHouse: "14000 SFT",
+    possessionDate: "Ready To Move"
   },
   {
     id: "4",
     title: "Sri Sai Yatika",
+    link: "sri-sai-yatika",
     description: "Discover the perfect blend of comfort and luxury at Sri Sai Yatika, where modern living meets traditional values.",
-    image: "/srisaiviradhya/main.jpeg",
+    description2: "Resort Like Living !",
+    description3: "3BHK Starting From 95 Lakhs",
+    image: "/srisaiyatika/MAIN.png",
     status: "ongoing",
     location: "Uppal, Hyderabad",
-    price: "₹ 1.25 Cr Onwards*",
+    houseType: "3 BHK",
+    price: "₹ 95 Lakhs* Onwards",
     category: "Swimming Pool, Gym, Security, Club House, Children's Play Area, Indoor Games, Temple, Parking",
     buildingSpecs: {
       powerBackup: "100% DG backup for lights and fans",
@@ -385,8 +417,11 @@ export const projects: Project[] = [
     ],
     masterPlan: "/master-plans/yatika.jpg",
     reraNumber: "P02200005596",
-    size: "1200 to 1800 sft",
-    type: "2 & 3 BHK"
+    size: "2.85 Acres",
+    flatSizes: "1200 Sft - 1800 Sft",
+    type: "2 & 3 BHK",
+    clubHouse: "15000 SFT",
+    possessionDate: "Ready To Move"
   }
 ];
 

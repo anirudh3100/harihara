@@ -172,7 +172,7 @@ export default function SriSaiViradhya() {
       </section>
 
       {/* 3D Floor Plans */}
-      <section className="py-10 bg-[#fef5db]">
+      <section className="py-10 bg-[#ffffff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-12">
           3D Floor Plans
@@ -233,7 +233,7 @@ export default function SriSaiViradhya() {
 
 
       {/* Flat specifications & Building specifications */}
-      <section className="py-24 bg-[#fef5db]">
+      <section className="py-24 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Toggle Buttons */}
           <div className="flex justify-center mb-12">
@@ -478,7 +478,7 @@ export default function SriSaiViradhya() {
 
 
       {/* Location & Connectivity */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#FEF5DB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-16 relative inline-block">
             Location Advantage
@@ -525,7 +525,7 @@ export default function SriSaiViradhya() {
                 ]
               }
             ].map((section, index) => (
-              <div key={index} className="bg-[#fef5db] rounded-2xl p-6">
+              <div key={index} className="bg-[#F0F0F0] rounded-2xl p-6">
                 <h3 className="text-2xl font-semibold text-[#00827f] mb-4">{section.title}</h3>
                 <ul className="space-y-2">
                   {section.items.map((item, itemIndex) => (

@@ -19,7 +19,7 @@ import ChatBox from "./components/ChatBox";
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col bg-[#fef5db] text-[#1c2841]">
+      <div className="min-h-screen flex flex-col bg-[#ffffff] text-[#1c2841]">
         <Navbar />
         <main className="flex-grow">
           <Switch>

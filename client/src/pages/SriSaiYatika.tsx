@@ -6,7 +6,7 @@ import BrochureForm from "@/components/BrochureForm";
 
 export default function SriSaiYatika() {
   const [activeTab, setActiveTab] = useState('amenities');
-  
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fef5db] to-white">
       {/* Floating CTAs */}
@@ -35,7 +35,7 @@ export default function SriSaiYatika() {
         {/* Content Wrapper */}
         <div className="relative z-10 w-full flex flex-col items-center">
           {/* Logo */}
-          
+
 
           {/* Phone Number - Bottom Right */}
           <div className="absolute bottom-5 right-8">
@@ -76,15 +76,15 @@ export default function SriSaiYatika() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold text-[#1c2841] mb-8 relative">
-              Explore Unmatched Luxury
+                Explore Unmatched Luxury
                 <div className="absolute bottom-0 left-0 w-24 h-1 bg-[#00827f] rounded-full"></div>
               </h2>
               <p className="text-lg text-[#1c2841]/80 leading-relaxed mb-8">
-              Welcome to Sri Sai Yatika, where luxury meets serenity across 2.85 acres of prime real estate. Rising majestically with 10 floors, Sri Sai Yatika offers a range of 3BHK homes, ranging from 1635 sq. ft. to 2435 sq. ft., each meticulously designed for your comfort and convenience.              </p>
+                Welcome to Sri Sai Yatika, where luxury meets serenity across 2.85 acres of prime real estate. Rising majestically with 10 floors, Sri Sai Yatika offers a range of 3BHK homes, ranging from 1635 sq. ft. to 2435 sq. ft., each meticulously designed for your comfort and convenience.              </p>
               <p className="text-lg text-[#1c2841]/80 leading-relaxed">
-              At the heart of Sri Sai Yatika lies its exclusive 15000 sq. ft Club House, serving as the crowning jewel of this prestigious community. Designed to cater to your every need, the Club House is a sanctuary for pleasure and relaxation, offering a host of amenities to enrich your lifestyle.
+                At the heart of Sri Sai Yatika lies its exclusive 15000 sq. ft Club House, serving as the crowning jewel of this prestigious community. Designed to cater to your every need, the Club House is a sanctuary for pleasure and relaxation, offering a host of amenities to enrich your lifestyle.
 
-Experience the epitome of luxury living at Sri Sai Yatika. where every detail has been thoughtfully curated to elevate your living experience              </p>
+                Experience the epitome of luxury living at Sri Sai Yatika. where every detail has been thoughtfully curated to elevate your living experience              </p>
             </div>
             <div className="grid grid-cols-1 gap-4">
               {[
@@ -104,7 +104,7 @@ Experience the epitome of luxury living at Sri Sai Yatika. where every detail ha
       </section>
 
       {/* Amenities Section */}
-      <section className="py-24 bg-[#fef5db]">
+      <section className="py-24 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-12">
             Amenities
@@ -116,7 +116,7 @@ Experience the epitome of luxury living at Sri Sai Yatika. where every detail ha
               { name: "Badminton Court", img: "/srisaiyatika/Amenities/bandminton.jpg" },
               { name: "Mini Theatre", img: "/srisaiyatika/Amenities/minitheatre.jpg" },
               { name: "Indoor games", img: "/srisaiyatika/Amenities/indoor.jpg" },
-              { name: "Multipurpose Hall", img: "/srisaiyatika/Amenities/multipurposehall.jpg" }  
+              { name: "Multipurpose Hall", img: "/srisaiyatika/Amenities/multipurposehall.jpg" }
             ].map((amenity, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                 <img src={amenity.img} alt={amenity.name} className="w-full h-48 object-cover" />
@@ -137,21 +137,19 @@ Experience the epitome of luxury living at Sri Sai Yatika. where every detail ha
             <div className="bg-white rounded-full p-1">
               <button
                 onClick={() => setActiveTab('amenities')}
-                className={`px-8 py-3 rounded-full transition-colors ${
-                  activeTab === 'amenities'
+                className={`px-8 py-3 rounded-full transition-colors ${activeTab === 'amenities'
                     ? 'bg-[#00827f] text-white'
                     : 'text-[#1c2841] hover:bg-gray-100'
-                }`}
+                  }`}
               >
                 Flat Specifications
               </button>
               <button
                 onClick={() => setActiveTab('specifications')}
-                className={`px-8 py-3 rounded-full transition-colors ${
-                  activeTab === 'specifications'
+                className={`px-8 py-3 rounded-full transition-colors ${activeTab === 'specifications'
                     ? 'bg-[#00827f] text-white'
                     : 'text-[#1c2841] hover:bg-gray-100'
-                }`}
+                  }`}
               >
                 Building Specifications
               </button>
@@ -240,9 +238,9 @@ Experience the epitome of luxury living at Sri Sai Yatika. where every detail ha
                     items: [
                       <span>One TV/Data Point in the Living Room/Drawing Room and Master Bedroom.</span>,
                     ],
-                  },                
-                  
-                  
+                  },
+
+
                 ].map((section, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 shadow-lg flex justify-between items-center">
                     <div>
@@ -264,59 +262,59 @@ Experience the epitome of luxury living at Sri Sai Yatika. where every detail ha
               // Building Specifications Section
               <div className="space-y-6">
                 {[
-                 {
-                  title: "POWER BACKUP",
-                  image: "/icons/power-backup.png",
-                  items: [
-                    <span>DG backup for all lights and fans (excluding heavy appliances like ACs, geysers, washing machines, and dishwashers).</span>,
-                    <span>100% DG backup for common areas and service/utility areas.</span>,
-                  ],
-                },
-                {
-                  title: "LIFTS",
-                  image: "/icons/lift.png",
-                  items: [
-                    <span>High-speed automatic passenger/service lifts with a rescue device of reputed make.</span>,
-                    <span>Lift lobby with Vitrified Tiles / Granite.</span>,
-                  ],
-                },
-                {
-                  title: "FIRE & SAFETY",
-                  image: "/icons/fire-safety.png",
-                  items: [
-                    <span>Fire alarms, hydrants, and sprinklers as per fire regulation norms.</span>,
-                  ],
-                },
-                {
-                  title: "CAR WASH UTILITY",
-                  image: "/icons/car-wash.png",
-                  items: [
-                    <span>Provision for a Car Wash Facility in each cellar parking area.</span>,
-                  ],
-                },
-                {
-                  title: "ELECTRIC CHARGING STATION",
-                  image: "/icons/charging-station.png",
-                  items: [
-                    <span>A public electric charging station provided at a feasible location in the car parking area.</span>,
-                  ],
-                },
-                {
-                  title: "PARKING",
-                  image: "/icons/parking.png",
-                  items: [
-                    <span>Entire parking is designed to suit the requisite number of car parks at stilt and cellar levels as per the sanctioned plan.</span>,
-                  ],
-                },
-                {
-                  title: "SECURITY",
-                  image: "/icons/security.png",
-                  items: [
-                    <span>Sophisticated round-the-clock security system.</span>,
-                    <span>Surveillance cameras at the main security gate, entrance lobby of all wings, clubhouse, passenger lifts, children’s play area, and other appropriate common areas.</span>,
-                  ],
-                },
-                  
+                  {
+                    title: "POWER BACKUP",
+                    image: "/icons/power-backup.png",
+                    items: [
+                      <span>DG backup for all lights and fans (excluding heavy appliances like ACs, geysers, washing machines, and dishwashers).</span>,
+                      <span>100% DG backup for common areas and service/utility areas.</span>,
+                    ],
+                  },
+                  {
+                    title: "LIFTS",
+                    image: "/icons/lift.png",
+                    items: [
+                      <span>High-speed automatic passenger/service lifts with a rescue device of reputed make.</span>,
+                      <span>Lift lobby with Vitrified Tiles / Granite.</span>,
+                    ],
+                  },
+                  {
+                    title: "FIRE & SAFETY",
+                    image: "/icons/fire-safety.png",
+                    items: [
+                      <span>Fire alarms, hydrants, and sprinklers as per fire regulation norms.</span>,
+                    ],
+                  },
+                  {
+                    title: "CAR WASH UTILITY",
+                    image: "/icons/car-wash.png",
+                    items: [
+                      <span>Provision for a Car Wash Facility in each cellar parking area.</span>,
+                    ],
+                  },
+                  {
+                    title: "ELECTRIC CHARGING STATION",
+                    image: "/icons/charging-station.png",
+                    items: [
+                      <span>A public electric charging station provided at a feasible location in the car parking area.</span>,
+                    ],
+                  },
+                  {
+                    title: "PARKING",
+                    image: "/icons/parking.png",
+                    items: [
+                      <span>Entire parking is designed to suit the requisite number of car parks at stilt and cellar levels as per the sanctioned plan.</span>,
+                    ],
+                  },
+                  {
+                    title: "SECURITY",
+                    image: "/icons/security.png",
+                    items: [
+                      <span>Sophisticated round-the-clock security system.</span>,
+                      <span>Surveillance cameras at the main security gate, entrance lobby of all wings, clubhouse, passenger lifts, children’s play area, and other appropriate common areas.</span>,
+                    ],
+                  },
+
                 ].map((section, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 shadow-lg flex justify-between items-center">
                     <div>
@@ -390,7 +388,7 @@ Experience the epitome of luxury living at Sri Sai Yatika. where every detail ha
                 ]
               }
             ].map((section, index) => (
-              <div key={index} className="bg-[#fef5db] rounded-2xl p-6">
+              <div key={index} className="bg-[#f0f0f0] rounded-2xl p-6">
                 <h3 className="text-2xl font-semibold text-[#00827f] mb-4">{section.title}</h3>
                 <ul className="space-y-2">
                   {section.items.map((item, itemIndex) => (
@@ -407,104 +405,102 @@ Experience the epitome of luxury living at Sri Sai Yatika. where every detail ha
       </section>
 
       {/* Master and Floor Plans */}
-      <section className="py-16 bg-[#ffffff]">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Tabs */}
-    <div className="flex justify-center mb-10">
-      <div className="bg-white rounded-full p-1 shadow-md">
-        <button
-          onClick={() => setActiveTab("masterPlan")}
-          className={`px-6 py-2 rounded-full transition-colors ${
-            activeTab === "masterPlan"
-              ? "bg-[#00827f] text-white"
-              : "text-[#1c2841] hover:bg-gray-100"
-          }`}
-        >
-          Master Plan
-        </button>
-        <button
-          onClick={() => setActiveTab("floorPlans")}
-          className={`px-6 py-2 rounded-full transition-colors ${
-            activeTab === "floorPlans"
-              ? "bg-[#00827f] text-white"
-              : "text-[#1c2841] hover:bg-gray-100"
-          }`}
-        >
-          Floor Plans
-        </button>
-      </div>
-    </div>
-
-    {/* Content */}
-    {activeTab === "masterPlan" ? (
-      <div className="flex flex-col items-center">
-        <h3 className="text-xl font-semibold text-[#1c2841] mb-3">Master Plan</h3>
-        <a
-          href="/srisaiyatika/layout.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full max-w-2xl"
-        >
-          <img
-            src="/srisaiyatika/layout.png"
-            alt="Master Plan"
-            className="w-full rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300"
-          />
-        </a>
-        <p className="text-gray-600 text-center mt-3 max-w-lg">
-          Explore the complete community layout, featuring thoughtfully designed infrastructure, green spaces, and essential amenities.
-        </p>
-      </div>
-    ) : (
-      <div>
-        <h3 className="text-xl font-semibold text-[#1c2841] text-center mb-5">Floor Plans</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="flex flex-col items-center">
-            <a
-              href="/srisaiyatika/floorplan1.png"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full max-w-md"
-            >
-              <img
-                src="/srisaiyatika/floorplan1.png"
-                alt="Odd Floors Plan"
-                className="w-full rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300"
-              />
-            </a>
-            <p className="text-gray-600 text-center mt-3 max-w-md">
-              Floor plan for <strong>1st, 4th, 7th, and 10th</strong> floors, featuring an efficient layout for comfortable and spacious living.
-            </p>
+      <section className="py-16 bg-[#FEF5DB]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Tabs */}
+          <div className="flex justify-center mb-10">
+            <div className="bg-white rounded-full p-1 shadow-md">
+              <button
+                onClick={() => setActiveTab("masterPlan")}
+                className={`px-6 py-2 rounded-full transition-colors ${activeTab === "masterPlan"
+                    ? "bg-[#00827f] text-white"
+                    : "text-[#1c2841] hover:bg-gray-100"
+                  }`}
+              >
+                Master Plan
+              </button>
+              <button
+                onClick={() => setActiveTab("floorPlans")}
+                className={`px-6 py-2 rounded-full transition-colors ${activeTab === "floorPlans"
+                    ? "bg-[#00827f] text-white"
+                    : "text-[#1c2841] hover:bg-gray-100"
+                  }`}
+              >
+                Floor Plans
+              </button>
+            </div>
           </div>
 
-          <div className="flex flex-col items-center">
-            <a
-              href="/srisaiyatika/floorplan2.png"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full max-w-md"
-            >
-              <img
-                src="/srisaiyatika/floorplan2.png"
-                alt="Even Floors Plan"
-                className="w-full rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300"
-              />
-            </a>
-            <p className="text-gray-600 text-center mt-3 max-w-md">
-              Floor plan for <strong>2nd, 3rd, 5th, 6th, 8th, and 9th</strong> floors, designed for optimal space utilization and modern aesthetics.
-            </p>
-          </div>
+          {/* Content */}
+          {activeTab === "masterPlan" ? (
+            <div className="flex flex-col items-center">
+              <h3 className="text-xl font-semibold text-[#1c2841] mb-3">Master Plan</h3>
+              <a
+                href="/srisaiyatika/layout.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full max-w-2xl"
+              >
+                <img
+                  src="/srisaiyatika/layout.png"
+                  alt="Master Plan"
+                  className="w-full rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <p className="text-gray-600 text-center mt-3 max-w-lg">
+                Explore the complete community layout, featuring thoughtfully designed infrastructure, green spaces, and essential amenities.
+              </p>
+            </div>
+          ) : (
+            <div>
+              <h3 className="text-xl font-semibold text-[#1c2841] text-center mb-5">Floor Plans</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="flex flex-col items-center">
+                  <a
+                    href="/srisaiyatika/floorplan1.png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full max-w-md"
+                  >
+                    <img
+                      src="/srisaiyatika/floorplan1.png"
+                      alt="Odd Floors Plan"
+                      className="w-full rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </a>
+                  <p className="text-gray-600 text-center mt-3 max-w-md">
+                    Floor plan for <strong>1st, 4th, 7th, and 10th</strong> floors, featuring an efficient layout for comfortable and spacious living.
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-center">
+                  <a
+                    href="/srisaiyatika/floorplan2.png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full max-w-md"
+                  >
+                    <img
+                      src="/srisaiyatika/floorplan2.png"
+                      alt="Even Floors Plan"
+                      className="w-full rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </a>
+                  <p className="text-gray-600 text-center mt-3 max-w-md">
+                    Floor plan for <strong>2nd, 3rd, 5th, 6th, 8th, and 9th</strong> floors, designed for optimal space utilization and modern aesthetics.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      </div>
-    )}
-  </div>
-</section>
+      </section>
 
 
 
 
       {/* Google Maps Section */}
-      <section className="py-24 bg-[#fef5db]">
+      <section className="py-24 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-8">Find Us on the Map</h2>
           <div className="rounded-xl overflow-hidden shadow-lg">

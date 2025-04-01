@@ -184,7 +184,7 @@ export default function SriSaiKakatiya() {
 
 
       {/* Flat specifications & Building specifications */}
-      <section className="py-24 bg-[#fef5db]">
+      <section className="py-24 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Toggle Buttons */}
           <div className="flex justify-center mb-12">
@@ -366,7 +366,7 @@ export default function SriSaiKakatiya() {
 
       {/* Location & Connectivity */}
       {/* Location Advantage Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#FEF5DB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-16 relative inline-block">
             Location Advantage
@@ -416,7 +416,7 @@ export default function SriSaiKakatiya() {
                 ]
               }
             ].map((section, index) => (
-              <div key={index} className="bg-[#fef5db] rounded-2xl p-6">
+              <div key={index} className="bg-[#F0F0F0] rounded-2xl p-6">
                 <h3 className="text-2xl font-semibold text-[#00827f] mb-4">{section.title}</h3>
                 <ul className="space-y-2">
                   {section.items.map((item, itemIndex) => (
@@ -509,7 +509,7 @@ export default function SriSaiKakatiya() {
 
 
       {/* Google Maps Section */}
-      <section className="py-24 bg-[#fef5db]">
+      <section className="py-24 bg-[#FEF5DB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-8">Find Us on the Map</h2>
           <div className="rounded-xl overflow-hidden shadow-lg">

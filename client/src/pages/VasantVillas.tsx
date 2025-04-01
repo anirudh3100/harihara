@@ -5,7 +5,7 @@ import { useState } from "react";
 import BrochureForm from "@/components/BrochureForm";
 
 export default function VasantVillas() {
-  const [activeTab, setActiveTab] = useState('amenities');
+  const [activeTab, setActiveTab] = useState('specifications');
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fef5db] to-white">
@@ -35,7 +35,7 @@ export default function VasantVillas() {
         {/* Content Wrapper */}
         <div className="relative z-10 w-full flex flex-col items-center">
           {/* Logo */}
-          
+
 
           {/* Phone Number - Bottom Right */}
           <div className="absolute bottom-5 right-8">
@@ -104,299 +104,114 @@ export default function VasantVillas() {
       </section>
 
       {/* Amenities Section */}
-      <section className="py-24 bg-[#fef5db]">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-12">
-      Amenities
-    </h2>
-
-    {/* Full-width Image */}
-    <div className="overflow-hidden rounded-xl shadow-lg">
-      <img
-        src="/vasantvillas/amenities.png"
-        alt="Amenity"
-        className="w-full h-auto object-cover"
-      />
-    </div>
-  </div>
-</section>
-
-<section className="py-24 bg-[#fef5db]">
+      <section className="py-24 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Toggle Buttons */}
-          <div className="flex justify-center mb-12">
-            <div className="bg-white rounded-full p-1">
-              <button
-                onClick={() => setActiveTab('amenities')}
-                className={`px-8 py-3 rounded-full transition-colors ${
-                  activeTab === 'amenities'
-                    ? 'bg-[#00827f] text-white'
-                    : 'text-[#1c2841] hover:bg-gray-100'
-                }`}
-              >
-                Flat Specifications
-              </button>
-              <button
-                onClick={() => setActiveTab('specifications')}
-                className={`px-8 py-3 rounded-full transition-colors ${
-                  activeTab === 'specifications'
-                    ? 'bg-[#00827f] text-white'
-                    : 'text-[#1c2841] hover:bg-gray-100'
-                }`}
-              >
-                Building Specifications
-              </button>
-            </div>
-          </div>
+          <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-12">
+            Amenities
+          </h2>
 
-          {/* Content Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
-            {activeTab === 'amenities' ? (
-              // Flat Specifications Section
-              <div className="space-y-6">
-                {[
-                    {
-                      title: "FLOORING",
-                      image: "/icons/flooring.png",
-                      items: [
-                        <span><strong>Living, Dining Area & Staircase:</strong> Imported Marble.</span>,
-                        <span><strong>Family Lounge, Pooja Room, Foyer Areas, Kitchen, Bedrooms & Dressing Areas:</strong> 800x1600mm Vitrified Tiles of reputed make.</span>,
-                        <span><strong>Multi-Purpose Hall:</strong> Wooden Laminated Flooring.</span>,
-                        <span><strong>Bathrooms/Balcony/Deck Area/Store Room/Laundry/Utility Floor:</strong> Anti-skid vitrified tiles of reputed make.</span>,
-                      ],
-                    },
-                    {
-                      title: "DADOING",
-                      image: "/icons/dadoing.png",
-                      items: [
-                        <span><strong>Kitchen:</strong> Ceramic tiles up to 2’-0” height above the kitchen countertop, of reputed make.</span>,
-                        <span><strong>Bathrooms:</strong> Ceramic tiles of reputed make, up to 7’-0” height.</span>,
-                        <span><strong>Utilities:</strong> Ceramic tiles of reputed make, up to 3’-0” height.</span>,
-                      ],
-                    },
-                    {
-                      title: "BATHROOMS",
-                      image: "/icons/bathrooms.png",
-                      items: [
-                        <span>Washbasins in all bathrooms and powder rooms.</span>,
-                        <span>Diverter and Shower in all bathrooms except Powder Rooms.</span>,
-                        <span>EWC for all bathrooms and powder rooms of reputed make.</span>,
-                        <span>Premium CP fittings.</span>,
-                        <span>Power provision for geysers in all bathrooms.</span>,
-                      ],
-                    },
-                    {
-                      title: "KITCHEN",
-                      image: "/icons/kitchen.png",
-                      items: [
-                        <span><strong>Platform:</strong> Granite platform with stainless steel sink and swinging spout of reputed make.</span>,
-                      ],
-                    },
-                    {
-                      title: "ELECTRICAL",
-                      image: "/icons/electrical.png",
-                      items: [
-                        <span>Concealed copper wiring of reputed make.</span>,
-                        <span>Power outlets for air conditioners in the living room, family lounge, multipurpose hall, and all bedrooms.</span>,
-                        <span>Power outlet for cooking range chimney, refrigerator, microwave oven, mixer/grinder, and water purifier.</span>,
-                        <span>Power outlet for dishwasher in utility & washing machine in laundry.</span>,
-                        <span>Power supply for each unit.</span>,
-                        <span>Miniature Circuit Breakers (MCB) for each distribution board, of reputed make.</span>,
-                        <span>Switches of reputed make.</span>,
-                      ],
-                    },
-                    {
-                      title: "PAINTING",
-                      image: "/icons/painting.png",
-                      items: [
-                        <span><strong>External:</strong> Textured or putty with 2 coats of exterior emulsion paint.</span>,
-                        <span><strong>Internal:</strong> Premium Emulsion Paint of reputed make with roller finishing over luppam finish.</span>,
-                      ],
-                    },
-                    {
-                      title: "WALLS",
-                      image: "/icons/walls.png",
-                      items: [
-                        <span><strong>Structure:</strong> 8’’ thick external walls and 4” thick internal walls with Cement Blocks.</span>,
-                        <span><strong>Internal:</strong> Smooth cement plastering finish.</span>,
-                        <span><strong>External:</strong> Double coat cement plastering finish.</span>,
-                      ],
-                    },
-                    {
-                      title: "DOORS",
-                      image: "/icons/doors.png",
-                      items: [
-                        <span><strong>Main Door:</strong> Teakwood frame and hardwood teak veneer shutter with polish and SS hardware of reputed make.</span>,
-                        <span><strong>Internal Doors:</strong> Teakwood frame and Flush door shutter with both sides Laminate and SS hardware of reputed make.</span>,
-                        <span><strong>Bathroom Doors:</strong> Teakwood frame and Flush door shutter with PU Polish and SS hardware of reputed make.</span>,
-                        <span><strong>Balcony:</strong> UPVC sliding doors with plain glass & mosquito mesh of reputed make.</span>,
-                      ],
-                    },
-                    {
-                      title: "WINDOWS & GRILLS",
-                      image: "/icons/windows.png",
-                      items: [
-                        <span><strong>Windows:</strong> UPVC sliding windows with plain glass & mosquito mesh of reputed make.</span>,
-                        <span><strong>Grills:</strong> Aesthetically designed, Mild Steel (MS) grills with powder coat finish.</span>,
-                      ],
-                    },
-                    {
-                      title: "UTILITY & WASH",
-                      image: "/icons/utility.png",
-                      items: [
-                        <span><strong>Utility:</strong> Water inlet/outlet point for dishwasher and tap point for general washing.</span>,
-                        <span><strong>Laundry:</strong> Water inlet/outlet point for washing machine.</span>,
-                      ],
-                    },
-                    {
-                      title: "SMART HOME PROVISIONS",
-                      image: "/icons/smart-home.png",
-                      items: [
-                        <span>One bathroom occupancy sensor in the Master Bedroom and powder room on the Ground Floor.</span>,
-                        <span>One standalone biometric lock at the main door.</span>,
-                        <span>One standalone video door phone.</span>,
-                      ],
-                    },
-                  
-                  
-                  {
-                    title: "DADOING",
-                    image: "/icons/dadoing.png",
-                    items: [
-                      <span>
-                        <strong>Kitchen:</strong> Ceramic tiles up to 2’-0” height above the kitchen countertop, of reputed make.
-                      </span>,
-                      <span>
-                        <strong>Bathrooms:</strong> Ceramic tiles of reputed make, up to 7’-0” height.
-                      </span>,
-                      <span>
-                        <strong>Utilities:</strong> Ceramic tiles of reputed make, up to 3’-0” height.
-                      </span>,
-                    ],
-                  },
-                  
-                  
-                  {
-                    title: "Bathrooms",
-                    image: "/icons/walls.png",
-                    items: [
-                        <span><strong>Wash basins</strong> in all bathrooms</span>,
-                        <span><strong>Diverter and Shower</strong> in all bathrooms</span>,
-                        <span><strong>EWC</strong> for all bathrooms of reputed make</span>,
-                        <span><strong>CP fittings</strong> of reputed make</span>,
-                        <span><strong>Power provision</strong> for geysers in all bathrooms</span>,
-                      ],
-                    
-                    
-                  },
-                  {
-                    title: "KITCHEN UTILITIES",
-                    image: "/icons/kitchen.png",
-                    items: [
-                      <span>
-                        <strong>Granite countertop</strong> with a single bowl stainless steel sink with bore water connection along with provision for <strong>water purifier</strong> and <strong>washing machine</strong>
-                      </span>,
-                    ],
-                  },
-                  {
-                    title: "ELECTRICAL",
-                    image: "/icons/electrical.png",
-                    items: [
-                      <span><strong>Concealed copper wiring</strong> of reputed make</span>,
-                      <span><strong>Power outlets</strong> for air conditioners in the living room and all bedrooms</span>,
-                      <span><strong>Power outlet</strong> for cooking range chimney, refrigerator, microwave oven, and mixer/grinder in kitchen</span>,
-                      <span><strong>Power supply</strong> for each unit</span>,
-                      <span><strong>Miniature Circuit Breakers (MCB)</strong> for each distribution board of reputed make</span>,
-                      <span><strong>Switches</strong> of reputed make</span>,
-                    ],
-                  },
-                  {
-                    title: "PAINTING",
-                    image: "/icons/painting.png",
-                    items: [
-                      <span><strong>External:</strong> Textured or putty with two coats of exterior emulsion paint</span>,
-                      <span><strong>Internal:</strong> Premium Emulsion Paint of reputed make with roller finishing over luppam finish</span>,
-                    ],
-                  },
-                  
-                  
-                ].map((section, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg flex justify-between items-center">
-                    <div>
-                      <h3 className="text-xl font-semibold text-[#00827f] mb-4">{section.title}</h3>
-                      <ul className="space-y-2">
-                        {section.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="text-[#1c2841]/80 flex items-start">
-                            <span className="text-[#00827f] mr-2">•</span>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <img src={section.image} alt={section.title} className="w-16 h-16 ml-6" />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              // Building Specifications Section
-              <div className="space-y-6">
-                {[
-                 {
-                  title: "POWER BACKUP",
-                  image: "/icons/power-backup.png",
-                  items: [
-                    <span>DG backup for all lights, fans, and power points excluding heavy appliances like ACs, washing machines, dishwashers, and geysers.</span>,
-                    <span>100% DG backup for all common areas.</span>,
-                  ],
-                },
-                {
-                  title: "BILLING SYSTEMS",
-                  image: "/icons/billing.png",
-                  items: [
-                    <span>Prepaid Billing System for Electricity, DG, Water, and Maintenance.</span>,
-                  ],
-                },
-                {
-                  title: "SECURITY",
-                  image: "/icons/security.png",
-                  items: [
-                    <span>Sophisticated round-the-clock security system.</span>,
-                    <span>Intercom facility in all units, connecting to Security.</span>,
-                    <span>CC Cameras in appropriate common areas and the Club House.</span>,
-                    <span>Solar fencing along the boundary.</span>,
-                  ],
-                },
-                {
-                  title: "STRUCTURE",
-                  image: "/icons/structure.png",
-                  items: [
-                    <span>RCC Framed Structure designed to withstand wind and seismic loads.</span>,
-                  ],
-                },
-                  
-                  
-                ].map((section, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg flex justify-between items-center">
-                    <div>
-                      <h3 className="text-xl font-semibold text-[#00827f] mb-4">{section.title}</h3>
-                      <ul className="space-y-2">
-                        {section.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="text-[#1c2841]/80 flex items-start">
-                            <span className="text-[#00827f] mr-2">•</span>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <img src={section.image} alt={section.title} className="w-16 h-16 ml-6" />
-                  </div>
-                ))}
-              </div>
-            )}
+          {/* Full-width Image */}
+          <div className="overflow-hidden rounded-xl shadow-lg">
+            <img
+              src="/vasantvillas/amenities.png"
+              alt="Amenity"
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </section>
 
+      {/* Master and Floor Plans */}
+      <section className="py-24 bg-[#FEF5DB]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Tabs */}
+          <div className="flex justify-center mb-12">
+            <div className="bg-white rounded-full p-1 shadow-md">
+              <button
+                onClick={() => setActiveTab("masterPlan")}
+                className={`px-8 py-3 rounded-full transition-colors ${activeTab === "masterPlan"
+                    ? "bg-[#00827f] text-white"
+                    : "text-[#1c2841] hover:bg-gray-100"
+                  }`}
+              >
+                Master Plan
+              </button>
+              <button
+                onClick={() => setActiveTab("floorPlans")}
+                className={`px-8 py-3 rounded-full transition-colors ${activeTab === "floorPlans"
+                    ? "bg-[#00827f] text-white"
+                    : "text-[#1c2841] hover:bg-gray-100"
+                  }`}
+              >
+                Floor Plans
+              </button>
+            </div>
+          </div>
+
+          {/* Content */}
+          {activeTab === "masterPlan" ? (
+            <div className="flex flex-col items-center">
+              <h3 className="text-2xl font-semibold text-[#1c2841] mb-4">Master Plan</h3>
+              <a
+                href="/vasantvillas/masterplan.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full max-w-3xl"
+              >
+                <img
+                  src="/vasantvillas/masterplan.jpg"
+                  alt="Master Plan"
+                  className="w-full rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <p className="text-gray-600 text-center mt-4 max-w-2xl">
+                The master plan showcases the complete layout of the community, highlighting key amenities, green spaces, and infrastructure.
+              </p>
+            </div>
+          ) : (
+            <div>
+              <h3 className="text-2xl font-semibold text-[#1c2841] text-center mb-6">Floor Plans</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="flex flex-col items-center">
+                  <a
+                    href="/vasantvillas/west-facing-villa.png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <img
+                      src="/vasantvillas/WEST.png"
+                      alt="West Facing Villa"
+                      className="w-full h-auto rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </a>
+                  <p className="text-gray-600 text-center mt-4 max-w-md">
+                    <span>The <strong>West Facing Villa</strong> features a spacious layout with modern interiors, ensuring a comfortable and stylish living experience.</span>
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-center">
+                  <a
+                    href="/vasantvillas/east-facing-villa.png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <img
+                      src="/vasantvillas/EAST.png"
+                      alt="East Facing Villa"
+                      className="w-full h-auto rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </a>
+                  <p className="text-gray-600 text-center mt-4 max-w-md">
+                    <span>The <strong>East Facing Villa</strong> is designed to maximize natural light and ventilation, offering an elegant and energy-efficient home.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* Location & Connectivity */}
       <section className="py-20 bg-white">
@@ -452,7 +267,7 @@ export default function VasantVillas() {
                 ]
               }
             ].map((section, index) => (
-              <div key={index} className="bg-[#fef5db] rounded-2xl p-6">
+              <div key={index} className="bg-[#f0f0f0] rounded-2xl p-6">
                 <h3 className="text-2xl font-semibold text-[#00827f] mb-4">{section.title}</h3>
                 <ul className="space-y-2">
                   {section.items.map((item, itemIndex) => (
@@ -468,104 +283,287 @@ export default function VasantVillas() {
         </div>
       </section>
 
-      {/* Master and Floor Plans */}
-      <section className="py-24 bg-[#ffffff]">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Tabs */}
-    <div className="flex justify-center mb-12">
-      <div className="bg-white rounded-full p-1 shadow-md">
-        <button
-          onClick={() => setActiveTab("masterPlan")}
-          className={`px-8 py-3 rounded-full transition-colors ${
-            activeTab === "masterPlan"
-              ? "bg-[#00827f] text-white"
-              : "text-[#1c2841] hover:bg-gray-100"
-          }`}
-        >
-          Master Plan
-        </button>
-        <button
-          onClick={() => setActiveTab("floorPlans")}
-          className={`px-8 py-3 rounded-full transition-colors ${
-            activeTab === "floorPlans"
-              ? "bg-[#00827f] text-white"
-              : "text-[#1c2841] hover:bg-gray-100"
-          }`}
-        >
-          Floor Plans
-        </button>
-      </div>
-    </div>
 
-    {/* Content */}
-    {activeTab === "masterPlan" ? (
-      <div className="flex flex-col items-center">
-        <h3 className="text-2xl font-semibold text-[#1c2841] mb-4">Master Plan</h3>
-        <a
-          href="/vasantvillas/masterplan.jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full max-w-3xl"
-        >
-          <img
-            src="/vasantvillas/masterplan.jpg"
-            alt="Master Plan"
-            className="w-full rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
-          />
-        </a>
-        <p className="text-gray-600 text-center mt-4 max-w-2xl">
-          The master plan showcases the complete layout of the community, highlighting key amenities, green spaces, and infrastructure.
-        </p>
-      </div>
-    ) : (
-      <div>
-        <h3 className="text-2xl font-semibold text-[#1c2841] text-center mb-6">Floor Plans</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div className="flex flex-col items-center">
-            <a
-              href="/vasantvillas/west-facing-villa.png"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <img
-                src="/vasantvillas/WEST.png"
-                alt="West Facing Villa"
-                className="w-full h-auto rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
-              />
-            </a>
-            <p className="text-gray-600 text-center mt-4 max-w-md">
-              <span>The <strong>West Facing Villa</strong> features a spacious layout with modern interiors, ensuring a comfortable and stylish living experience.</span>
-            </p>
+
+      {/* Specifications Section */}
+      <section className="py-24 bg-[#fef5db]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Toggle Buttons */}
+          <div className="flex justify-center mb-12">
+            <div className="bg-white rounded-full p-1">
+              <button
+                onClick={() => setActiveTab('amenities')}
+                className={`px-8 py-3 rounded-full transition-colors ${activeTab === 'amenities'
+                    ? 'bg-[#00827f] text-white'
+                    : 'text-[#1c2841] hover:bg-gray-100'
+                  }`}
+              >
+                Flat Specifications
+              </button>
+              <button
+                onClick={() => setActiveTab('specifications')}
+                className={`px-8 py-3 rounded-full transition-colors ${activeTab === 'specifications'
+                    ? 'bg-[#00827f] text-white'
+                    : 'text-[#1c2841] hover:bg-gray-100'
+                  }`}
+              >
+                Building Specifications
+              </button>
+            </div>
           </div>
 
-          <div className="flex flex-col items-center">
-            <a
-              href="/vasantvillas/east-facing-villa.png"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <img
-                src="/vasantvillas/EAST.png"
-                alt="East Facing Villa"
-                className="w-full h-auto rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
-              />
-            </a>
-            <p className="text-gray-600 text-center mt-4 max-w-md">
-             <span>The <strong>East Facing Villa</strong> is designed to maximize natural light and ventilation, offering an elegant and energy-efficient home.</span>
-            </p>
+          {/* Content Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
+            {activeTab === 'amenities' ? (
+              // Flat Specifications Section
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "FLOORING",
+                    image: "/icons/flooring.png",
+                    items: [
+                      <span><strong>Living, Dining Area & Staircase:</strong> Imported Marble.</span>,
+                      <span><strong>Family Lounge, Pooja Room, Foyer Areas, Kitchen, Bedrooms & Dressing Areas:</strong> 800x1600mm Vitrified Tiles of reputed make.</span>,
+                      <span><strong>Multi-Purpose Hall:</strong> Wooden Laminated Flooring.</span>,
+                      <span><strong>Bathrooms/Balcony/Deck Area/Store Room/Laundry/Utility Floor:</strong> Anti-skid vitrified tiles of reputed make.</span>,
+                    ],
+                  },
+                  {
+                    title: "DADOING",
+                    image: "/icons/dadoing.png",
+                    items: [
+                      <span><strong>Kitchen:</strong> Ceramic tiles up to 2’-0” height above the kitchen countertop, of reputed make.</span>,
+                      <span><strong>Bathrooms:</strong> Ceramic tiles of reputed make, up to 7’-0” height.</span>,
+                      <span><strong>Utilities:</strong> Ceramic tiles of reputed make, up to 3’-0” height.</span>,
+                    ],
+                  },
+                  {
+                    title: "BATHROOMS",
+                    image: "/icons/bathrooms.png",
+                    items: [
+                      <span>Washbasins in all bathrooms and powder rooms.</span>,
+                      <span>Diverter and Shower in all bathrooms except Powder Rooms.</span>,
+                      <span>EWC for all bathrooms and powder rooms of reputed make.</span>,
+                      <span>Premium CP fittings.</span>,
+                      <span>Power provision for geysers in all bathrooms.</span>,
+                    ],
+                  },
+                  {
+                    title: "KITCHEN",
+                    image: "/icons/kitchen.png",
+                    items: [
+                      <span><strong>Platform:</strong> Granite platform with stainless steel sink and swinging spout of reputed make.</span>,
+                    ],
+                  },
+                  {
+                    title: "ELECTRICAL",
+                    image: "/icons/electrical.png",
+                    items: [
+                      <span>Concealed copper wiring of reputed make.</span>,
+                      <span>Power outlets for air conditioners in the living room, family lounge, multipurpose hall, and all bedrooms.</span>,
+                      <span>Power outlet for cooking range chimney, refrigerator, microwave oven, mixer/grinder, and water purifier.</span>,
+                      <span>Power outlet for dishwasher in utility & washing machine in laundry.</span>,
+                      <span>Power supply for each unit.</span>,
+                      <span>Miniature Circuit Breakers (MCB) for each distribution board, of reputed make.</span>,
+                      <span>Switches of reputed make.</span>,
+                    ],
+                  },
+                  {
+                    title: "PAINTING",
+                    image: "/icons/painting.png",
+                    items: [
+                      <span><strong>External:</strong> Textured or putty with 2 coats of exterior emulsion paint.</span>,
+                      <span><strong>Internal:</strong> Premium Emulsion Paint of reputed make with roller finishing over luppam finish.</span>,
+                    ],
+                  },
+                  {
+                    title: "WALLS",
+                    image: "/icons/walls.png",
+                    items: [
+                      <span><strong>Structure:</strong> 8’’ thick external walls and 4” thick internal walls with Cement Blocks.</span>,
+                      <span><strong>Internal:</strong> Smooth cement plastering finish.</span>,
+                      <span><strong>External:</strong> Double coat cement plastering finish.</span>,
+                    ],
+                  },
+                  {
+                    title: "DOORS",
+                    image: "/icons/doors.png",
+                    items: [
+                      <span><strong>Main Door:</strong> Teakwood frame and hardwood teak veneer shutter with polish and SS hardware of reputed make.</span>,
+                      <span><strong>Internal Doors:</strong> Teakwood frame and Flush door shutter with both sides Laminate and SS hardware of reputed make.</span>,
+                      <span><strong>Bathroom Doors:</strong> Teakwood frame and Flush door shutter with PU Polish and SS hardware of reputed make.</span>,
+                      <span><strong>Balcony:</strong> UPVC sliding doors with plain glass & mosquito mesh of reputed make.</span>,
+                    ],
+                  },
+                  {
+                    title: "WINDOWS & GRILLS",
+                    image: "/icons/windows.png",
+                    items: [
+                      <span><strong>Windows:</strong> UPVC sliding windows with plain glass & mosquito mesh of reputed make.</span>,
+                      <span><strong>Grills:</strong> Aesthetically designed, Mild Steel (MS) grills with powder coat finish.</span>,
+                    ],
+                  },
+                  {
+                    title: "UTILITY & WASH",
+                    image: "/icons/utility.png",
+                    items: [
+                      <span><strong>Utility:</strong> Water inlet/outlet point for dishwasher and tap point for general washing.</span>,
+                      <span><strong>Laundry:</strong> Water inlet/outlet point for washing machine.</span>,
+                    ],
+                  },
+                  {
+                    title: "SMART HOME PROVISIONS",
+                    image: "/icons/smart-home.png",
+                    items: [
+                      <span>One bathroom occupancy sensor in the Master Bedroom and powder room on the Ground Floor.</span>,
+                      <span>One standalone biometric lock at the main door.</span>,
+                      <span>One standalone video door phone.</span>,
+                    ],
+                  },
+
+
+                  {
+                    title: "DADOING",
+                    image: "/icons/dadoing.png",
+                    items: [
+                      <span>
+                        <strong>Kitchen:</strong> Ceramic tiles up to 2’-0” height above the kitchen countertop, of reputed make.
+                      </span>,
+                      <span>
+                        <strong>Bathrooms:</strong> Ceramic tiles of reputed make, up to 7’-0” height.
+                      </span>,
+                      <span>
+                        <strong>Utilities:</strong> Ceramic tiles of reputed make, up to 3’-0” height.
+                      </span>,
+                    ],
+                  },
+
+
+                  {
+                    title: "Bathrooms",
+                    image: "/icons/walls.png",
+                    items: [
+                      <span><strong>Wash basins</strong> in all bathrooms</span>,
+                      <span><strong>Diverter and Shower</strong> in all bathrooms</span>,
+                      <span><strong>EWC</strong> for all bathrooms of reputed make</span>,
+                      <span><strong>CP fittings</strong> of reputed make</span>,
+                      <span><strong>Power provision</strong> for geysers in all bathrooms</span>,
+                    ],
+
+
+                  },
+                  {
+                    title: "KITCHEN UTILITIES",
+                    image: "/icons/kitchen.png",
+                    items: [
+                      <span>
+                        <strong>Granite countertop</strong> with a single bowl stainless steel sink with bore water connection along with provision for <strong>water purifier</strong> and <strong>washing machine</strong>
+                      </span>,
+                    ],
+                  },
+                  {
+                    title: "ELECTRICAL",
+                    image: "/icons/electrical.png",
+                    items: [
+                      <span><strong>Concealed copper wiring</strong> of reputed make</span>,
+                      <span><strong>Power outlets</strong> for air conditioners in the living room and all bedrooms</span>,
+                      <span><strong>Power outlet</strong> for cooking range chimney, refrigerator, microwave oven, and mixer/grinder in kitchen</span>,
+                      <span><strong>Power supply</strong> for each unit</span>,
+                      <span><strong>Miniature Circuit Breakers (MCB)</strong> for each distribution board of reputed make</span>,
+                      <span><strong>Switches</strong> of reputed make</span>,
+                    ],
+                  },
+                  {
+                    title: "PAINTING",
+                    image: "/icons/painting.png",
+                    items: [
+                      <span><strong>External:</strong> Textured or putty with two coats of exterior emulsion paint</span>,
+                      <span><strong>Internal:</strong> Premium Emulsion Paint of reputed make with roller finishing over luppam finish</span>,
+                    ],
+                  },
+
+
+                ].map((section, index) => (
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg flex justify-between items-center">
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#00827f] mb-4">{section.title}</h3>
+                      <ul className="space-y-2">
+                        {section.items.map((item, itemIndex) => (
+                          <li key={itemIndex} className="text-[#1c2841]/80 flex items-start">
+                            <span className="text-[#00827f] mr-2">•</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <img src={section.image} alt={section.title} className="w-16 h-16 ml-6" />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              // Building Specifications Section
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "POWER BACKUP",
+                    image: "/icons/power-backup.png",
+                    items: [
+                      <span>DG backup for all lights, fans, and power points excluding heavy appliances like ACs, washing machines, dishwashers, and geysers.</span>,
+                      <span>100% DG backup for all common areas.</span>,
+                    ],
+                  },
+                  {
+                    title: "BILLING SYSTEMS",
+                    image: "/icons/billing.png",
+                    items: [
+                      <span>Prepaid Billing System for Electricity, DG, Water, and Maintenance.</span>,
+                    ],
+                  },
+                  {
+                    title: "SECURITY",
+                    image: "/icons/security.png",
+                    items: [
+                      <span>Sophisticated round-the-clock security system.</span>,
+                      <span>Intercom facility in all units, connecting to Security.</span>,
+                      <span>CC Cameras in appropriate common areas and the Club House.</span>,
+                      <span>Solar fencing along the boundary.</span>,
+                    ],
+                  },
+                  {
+                    title: "STRUCTURE",
+                    image: "/icons/structure.png",
+                    items: [
+                      <span>RCC Framed Structure designed to withstand wind and seismic loads.</span>,
+                    ],
+                  },
+
+
+                ].map((section, index) => (
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg flex justify-between items-center">
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#00827f] mb-4">{section.title}</h3>
+                      <ul className="space-y-2">
+                        {section.items.map((item, itemIndex) => (
+                          <li key={itemIndex} className="text-[#1c2841]/80 flex items-start">
+                            <span className="text-[#00827f] mr-2">•</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <img src={section.image} alt={section.title} className="w-16 h-16 ml-6" />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
-      </div>
-    )}
-  </div>
-</section>
+      </section>
 
 
 
       {/* Google Maps Section */}
-      <section className="py-24 bg-[#fef5db]">
+      <section className="py-24 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-8">Find Us on the Map</h2>
           <div className="rounded-xl overflow-hidden shadow-lg">
