@@ -31,7 +31,7 @@ export default function SriSaiKakatiya() {
       <section className="relative min-h-[70vh] flex items-center justify-center bg-[#1c2841]">
         {/* Background Image and Gradient Overlay */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('/srisaikakatiya/background.jpg')] bg-cover bg-center opacity-300" />
+          <div className="absolute inset-0 bg-[url('/srisaikakatiya/background.jpg')] bg-cover bg-center opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#1c2841]/80 to-[#1c2841]/60" />
         </div>
 
@@ -39,7 +39,7 @@ export default function SriSaiKakatiya() {
         <div className="relative z-10 w-full flex flex-col items-center">
           {/* Logo */}
           <img
-            src="/hariharalogo.png"
+            src="/srisaikakatiya/logo.png"
             alt="Hari Hara Logo"
             className="h-32 w-auto mb-8"
           />
@@ -83,18 +83,18 @@ export default function SriSaiKakatiya() {
     
 
       {/* Project Description */}
-      <section className="py-20 bg-[#fef5db]">
+      <section className="py-20 bg-[#b2dbee]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-[#1c2841] mb-8 relative">
+              <h2 className="text-3xl font-bold text-[#333333] mb-8 ">
                 One of the best Gated Communities near you with 2bhk and 3bhk flats for sale
                 <div className="absolute bottom-0 left-0 w-24 h-1 bg-[#00827f] rounded-full"></div>
               </h2>
-              <p className="text-lg text-[#1c2841]/80 leading-relaxed mb-8">
+              <p className="text-lg text-[#333333]/80 leading-relaxed mb-8">
                 Hari Hara's Sri Sai Kakatiya instantly captivates with its unique presence in Pocharam, boasting dramatic views along Hyderabad-Warangal NH 163 and an iconic eastern skyline.
               </p>
-              <p className="text-lg text-[#1c2841]/80 leading-relaxed">
+              <p className="text-lg text-[#333333]/80 leading-relaxed">
                 This exclusive residence features 360 elegant flats across two 15-story towers, offering panoramic vistas and private terraces that showcase the area's beauty. The design marries a rich personality with sleek functionality, making every aspect of living here a testament to luxurious and thoughtful architecture.
               </p>
             </div>
@@ -157,7 +157,7 @@ export default function SriSaiKakatiya() {
 
 
       {/* Amenities Section */}
-      <section className="py-24 bg-[#fef5db]">
+      <section className="py-24 bg-[#b2dbee]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-12">
             Amenities
@@ -366,7 +366,7 @@ export default function SriSaiKakatiya() {
 
       {/* Location & Connectivity */}
       {/* Location Advantage Section */}
-      <section className="py-20 bg-[#FEF5DB]">
+      <section className="py-20 bg-[#b2dbee]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-16 relative inline-block">
             Location Advantage
@@ -509,7 +509,7 @@ export default function SriSaiKakatiya() {
 
 
       {/* Google Maps Section */}
-      <section className="py-24 bg-[#FEF5DB]">
+        <section className="py-24 bg-[#b2dbee]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#1c2841] text-center mb-8">Find Us on the Map</h2>
           <div className="rounded-xl overflow-hidden shadow-lg">
@@ -538,7 +538,7 @@ export default function SriSaiKakatiya() {
               Enquire Now
               <div className="absolute bottom-0 left-0 w-full h-1 bg-[#00827f] rounded-full"></div>
             </h2>
-            <div className="bg-[#fef5db] rounded-2xl p-8 shadow-xl">
+            <div className="bg-[#b2dbee] rounded-2xl p-8 shadow-xl">
               <form className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-[#1c2841] mb-2">Name</label>
