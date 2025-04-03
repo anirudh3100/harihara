@@ -63,7 +63,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-[#00827F]">
                 <Phone className="w-4 h-4" />
-                <span className="text-sm font-medium">+91 1234567890</span>
+                <span className="text-sm font-medium">+91 9066832832</span>
               </div>
               <div className="flex items-center space-x-2 text-[#00827F]">
                 <MapPin className="w-4 h-4" />
