@@ -14,7 +14,7 @@ import SriSaiViradhya from "./pages/SriSaiViradhya";
 import SriSaiKakatiya from "./pages/SriSaiKakatiya";
 import VasantVillas from "./pages/VasantVillas";
 import SriSaiYatika from "./pages/SriSaiYatika";  
-import ChatBox from "./components/ChatBox";
+import AzureChatbot from './components/AzureChatbot';
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
           </Switch>
         </main>
         <Footer />
-        <ChatBox />
+        <AzureChatbot />
       </div>
       <Toaster />
     </QueryClientProvider>
