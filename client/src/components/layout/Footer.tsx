@@ -1,93 +1,189 @@
 import { Link } from "wouter";
 import { projects } from "@/lib/data";
-import { PhoneIcon } from "lucide-react";
-import { MailIcon } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1c2841] text-white mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#00827f]">About Us</h3>
-            <p className="text-sm text-gray-300">
-            We are independent developers working with a commitment to professionalism and reliability. 
+    <footer className="bg-gradient-to-b from-gray-900 to-[#1c2841] text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Company Info */}
+          <div className="space-y-6">
+            <img 
+              src="/hariharalogo.png" 
+              alt="Hari Hara Estates" 
+              className="h-12 w-auto brightness-0 invert"
+            />
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Pioneering excellence in real estate development with over 30 years of trusted experience. 
+              Building dreams, creating communities, and delivering quality living spaces.
             </p>
+            <div className="flex space-x-4">
+              <motion.a 
+                whileHover={{ y: -3 }}
+                href="#" 
+                className="bg-white/10 p-2 rounded-full hover:bg-[#00827F] transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </motion.a>
+              <motion.a 
+                whileHover={{ y: -3 }}
+                href="#" 
+                className="bg-white/10 p-2 rounded-full hover:bg-[#00827F] transition-colors"
+              >
+                <Twitter className="w-5 h-5" />
+              </motion.a>
+              <motion.a 
+                whileHover={{ y: -3 }}
+                href="#" 
+                className="bg-white/10 p-2 rounded-full hover:bg-[#00827F] transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </motion.a>
+              <motion.a 
+                whileHover={{ y: -3 }}
+                href="#" 
+                className="bg-white/10 p-2 rounded-full hover:bg-[#00827F] transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </motion.a>
+            </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#00827f]">Our Projects</h3>
-            <ul className="space-y-2">
-              {projects.map((project) => (
-                <li key={project.id}>
-                  <Link href={`/${project.link}`}>
-                    <a className="text-sm text-gray-300 hover:text-[#00827f] transition-colors">
-                      {project.title}
-                    </a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#00827f]">Quick Links</h3>
-            <div className="flex flex-col space-y-2">
-              <a href="#" className="text-gray-300 hover:text-[#00827f] transition-colors">
+            <h3 className="text-lg font-semibold mb-6 text-[#00827F]">Quick Links</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <Link href="/about">
+                <motion.a 
+                  whileHover={{ x: 4 }}
+                  className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-2 text-sm"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                  About Us
+                </motion.a>
+              </Link>
+              <Link href="/projects">
+                <motion.a 
+                  whileHover={{ x: 4 }}
+                  className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-2 text-sm"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                  Projects
+                </motion.a>
+              </Link>
+              <Link href="/completed-projects">
+                <motion.a 
+                  whileHover={{ x: 4 }}
+                  className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-2 text-sm"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                  Completed Projects
+                </motion.a>
+              </Link>
+              <Link href="/news">
+                <motion.a 
+                  whileHover={{ x: 4 }}
+                  className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-2 text-sm"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                  News & Media
+                </motion.a>
+              </Link>
+              <Link href="/contact">
+                <motion.a 
+                  whileHover={{ x: 4 }}
+                  className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-2 text-sm"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                  Contact Us
+                </motion.a>
+              </Link>
+              <a href="#" className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-2 text-sm">
+                <ArrowRight className="w-4 h-4" />
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-300 hover:text-[#00827f] transition-colors">
-                Terms & Conditions
               </a>
             </div>
           </div>
 
+          {/* Featured Projects */}
           <div>
-  <h3 className="text-lg font-semibold mb-4 text-[#00827f]">Contact</h3>
-  <address className="text-sm text-gray-300 not-italic space-y-2">
-    <p>Harihara Estate, Opp. ISI</p>
-    <p>St. No:8, Habsiguda, Telangana</p>
-    <p>Hyderabad - 500007</p>
-    
-    {/* WhatsApp Link */}
-    <a 
-      href="https://wa.me/911234567890" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="hover:text-[#00827f] transition-colors flex items-center gap-1"
-    >
-      <PhoneIcon className="w-4 h-4" /> {/* Optional icon */}
-      Phone: +91 1234567890
-    </a>
-    
-    {/* Email Link */}
-    <a 
-      href="mailto:info@hariharaestates.com" 
-      className="hover:text-[#00827f] transition-colors flex items-center gap-1"
-    >
-      <MailIcon className="w-4 h-4" /> {/* Optional icon */}
-      info@hariharaestates.com
-    </a>
-  </address>
-</div>
+            <h3 className="text-lg font-semibold mb-6 text-[#00827F]">Featured Projects</h3>
+            <div className="space-y-4">
+              {projects.slice(0, 4).map((project) => (
+                <Link key={project.id} href={`/${project.link}`}>
+                  <motion.a 
+                    whileHover={{ x: 4 }}
+                    className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-2 text-sm"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                    {project.title}
+                  </motion.a>
+                </Link>
+              ))}
+            </div>
+          </div>
 
+          {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#00827f]">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-[#00827f] transition-colors">
-                LinkedIn
-              </a>
-              <a href="#" className="text-gray-300 hover:text-[#00827f] transition-colors">
-                Twitter
-              </a>
+            <h3 className="text-lg font-semibold mb-6 text-[#00827F]">Contact Us</h3>
+            <div className="space-y-4">
+              <motion.a 
+                whileHover={{ x: 4 }}
+                href="https://maps.google.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#00827F] transition-colors flex items-start gap-3 text-sm"
+              >
+                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
+                <span>
+                  Harihara Estate, Opp. ISI<br />
+                  St. No:8, Habsiguda, Telangana<br />
+                  Hyderabad - 500007
+                </span>
+              </motion.a>
+              <motion.a 
+                whileHover={{ x: 4 }}
+                href="https://wa.me/911234567890" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-3 text-sm"
+              >
+                <Phone className="w-5 h-5" />
+                +91 1234567890
+              </motion.a>
+              <motion.a 
+                whileHover={{ x: 4 }}
+                href="mailto:info@hariharaestates.com" 
+                className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-3 text-sm"
+              >
+                <Mail className="w-5 h-5" />
+                info@hariharaestates.com
+              </motion.a>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-700">
-          <p className="text-sm text-center text-gray-300">
-            © {new Date().getFullYear()} Real Estate Co. All rights reserved.
-          </p>
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-400">
+              © {new Date().getFullYear()} Hari Hara Estates. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              <a href="#" className="text-sm text-gray-400 hover:text-[#00827F] transition-colors">
+                Terms & Conditions
+              </a>
+              <a href="#" className="text-sm text-gray-400 hover:text-[#00827F] transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-sm text-gray-400 hover:text-[#00827F] transition-colors">
+                Sitemap
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
