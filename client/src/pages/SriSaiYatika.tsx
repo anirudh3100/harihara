@@ -20,10 +20,10 @@ export default function SriSaiYatika() {
   return (
     <div className="min-h-screen bg-white">
       {/* Floating Contact Buttons */}
-      <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+      <div className="fixed bottom-8 left-8 z-50 flex flex-col gap-4">
         <BrochureForm
           projectName="Sri Sai Yatika"
-          brochureUrl="/srisaiyatika/Hariharas-Sri-Sai-Yatika-Brochure.pdf"
+          brochureUrl="/srisaikakatiya/Hariharas-Sri-Sai-Kakatiya-Brochure.pdf"
         />
         <a href="tel:+919066832832">
           <Button className="bg-[#00827F] hover:bg-[#00827F]/90 text-white rounded-full px-6 py-3 shadow-lg flex items-center gap-2">
