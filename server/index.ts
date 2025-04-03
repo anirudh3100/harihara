@@ -33,9 +33,16 @@ app.get("/googlef8b37f11528319b3.html", (req, res) => {
     serveStatic(app);
   }
 
-  const port = process.env.PORT || 5000;
-  server.listen({ port, host: "0.0.0.0", reusePort: true }, () => {
-    log(`serving on port ${port}`);
-  });
+  const port = process.env.PORT || 3000;
+  
+  // Use a try-catch block to handle potential errors
+  try {
+    server.listen(port, () => {
+      log(`serving on port ${port}`);
+    });
+  } catch (error) {
+    log(`Error starting server: ${error}`);
+    process.exit(1);
+  }
 
 })();

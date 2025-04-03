@@ -10,6 +10,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
 
   const httpServer = createServer(app);
+  
+  // Set a timeout to prevent hanging connections
+  httpServer.timeout = 120000; // 2 minutes
 
   return httpServer;
 }

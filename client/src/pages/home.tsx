@@ -12,7 +12,11 @@ import { Link } from "wouter";
 import { Building2, Users, Trophy, Clock, Search, MapPin, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+
+import CalendlyWidget from "@/components/CalendlyWidget";
+
 import BrochureForm from "@/components/BrochureForm";
+
 
 // Custom hook for autoplay
 function useAutoplay(interval: number = 5000) {
@@ -339,17 +343,22 @@ export default function Home() {
             Let our expert team guide you through the perfect property selection process.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-white text-[#19376D] hover:bg-white/90 px-8 py-6 text-lg w-full sm:w-auto">
-                Schedule a Visit
-              </Button>
-            </Link>
+
+            <CalendlyWidget 
+              url="https://calendly.com/kbykrishnabalaji/personalized-real-estate-consultation"
+              text="Schedule a Visit"
+              variant="outline"
+              size="lg"
+              className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto"
+            />
+           
             <BrochureForm
               projectName="Hari Hara Estates"
               brochureUrl="/srisaikakatiya/Hariharas-Sri-Sai-Kakatiya-Brochure.pdf"
               className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto"
               buttonText="Download Brochure"
             />
+
           </div>
         </div>
       </section>
