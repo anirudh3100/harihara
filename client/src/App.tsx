@@ -13,7 +13,7 @@ import CompletedProjects from "./pages/completed-projects";
 import SriSaiViradhya from "./pages/SriSaiViradhya";
 import SriSaiKakatiya from "./pages/SriSaiKakatiya";
 import VasantVillas from "./pages/VasantVillas";
-import SriSaiYatika from "./pages/SriSaiYatika";
+import SriSaiYatika from "./pages/SriSaiYatika";  
 import ChatBox from "./components/ChatBox";
 
 function App() {

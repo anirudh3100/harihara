@@ -266,7 +266,7 @@ export const projects: Project[] = [
     status: "ongoing",
     houseType: "4 BHK Triplex Villas",
     location: "East Hyderabad",
-    price: "₹ 1.5 Cr* Onwards",
+    price: "₹ 1.5 Cr*   Onwards",
     category: "Swimming Pool, Gym, Security, Club House, Children's Play Area, Indoor Games, Temple, Parking",
     buildingSpecs: {
       powerBackup: "100% DG backup for lights and fans",

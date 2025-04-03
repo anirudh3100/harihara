@@ -20,7 +20,7 @@ export default function SriSaiYatika() {
   return (
     <div className="min-h-screen bg-white">
       {/* Floating Contact Buttons */}
-      <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+      <div className="fixed bottom-8 left-8 z-50 flex flex-col gap-4">
         <BrochureForm
           projectName="Sri Sai Yatika"
           brochureUrl="/srisaiyatika/Hariharas-Sri-Sai-Yatika-Brochure.pdf"

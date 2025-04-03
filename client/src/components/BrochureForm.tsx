@@ -16,9 +16,16 @@ import { useToast } from "@/components/ui/use-toast";
 interface BrochureFormProps {
   projectName: string;
   brochureUrl: string;
+  className?: string;
+  buttonText?: string;
 }
 
-export default function BrochureForm({ projectName, brochureUrl }: BrochureFormProps) {
+export default function BrochureForm({ 
+  projectName, 
+  brochureUrl, 
+  className = "bg-[#00827f] text-white rounded-full px-6 py-3 shadow-lg hover:bg-[#006c6a] transition-colors flex items-center gap-2",
+  buttonText = "Get Brochure"
+}: BrochureFormProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -74,14 +81,17 @@ export default function BrochureForm({ projectName, brochureUrl }: BrochureFormP
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className="bg-[#00827f] text-white rounded-full px-6 py-3 shadow-lg hover:bg-[#006c6a] transition-colors flex items-center gap-2">
+        <Button className={className}>
           <Download className="w-5 h-5" />
-          Get Brochure
+          {buttonText}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Download Brochure</DialogTitle>
+          <p className="text-sm text-gray-500 mt-2">
+            Welcome to Harihara Estates! Please fill in your details to download the brochure.
+          </p>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div className="grid grid-cols-2 gap-4">
