@@ -55,7 +55,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-6 text-[#00827F]">Quick Links</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-4">
               <Link href="/about">
                 <motion.a 
                   whileHover={{ x: 4 }}
@@ -101,17 +101,13 @@ export default function Footer() {
                   Contact Us
                 </motion.a>
               </Link>
-              <a href="#" className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-2 text-sm">
-                <ArrowRight className="w-4 h-4" />
-                Privacy Policy
-              </a>
             </div>
           </div>
 
           {/* Featured Projects */}
           <div>
             <h3 className="text-lg font-semibold mb-6 text-[#00827F]">Featured Projects</h3>
-            <div className="space-y-4">
+            <div className="grid gap-4">
               {projects.slice(0, 4).map((project) => (
                 <Link key={project.id} href={`/${project.link}`}>
                   <motion.a 
@@ -132,7 +128,7 @@ export default function Footer() {
             <div className="space-y-4">
               <motion.a 
                 whileHover={{ x: 4 }}
-                href="https://maps.google.com" 
+                href="https://maps.app.goo.gl/LM6yxQMqrP2auwDq5" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-[#00827F] transition-colors flex items-start gap-3 text-sm"
@@ -146,13 +142,13 @@ export default function Footer() {
               </motion.a>
               <motion.a 
                 whileHover={{ x: 4 }}
-                href="https://wa.me/911234567890" 
+                href="https://wa.me/9066832832" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-[#00827F] transition-colors flex items-center gap-3 text-sm"
               >
                 <Phone className="w-5 h-5" />
-                +91 1234567890
+                +91 9066832832
               </motion.a>
               <motion.a 
                 whileHover={{ x: 4 }}

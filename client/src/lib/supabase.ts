@@ -10,12 +10,11 @@ if (!supabaseUrl || !supabaseKey) {
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Type for the brochure download form data
-export interface BrochureFormData {
-  id?: string;
+export type BrochureFormData = {
   first_name: string;
   last_name: string;
   email: string;
   phone: string;
   project_name: string;
-  created_at?: string;
-} 
+  visitor_id: string;
+}; 

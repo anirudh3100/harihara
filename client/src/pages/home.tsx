@@ -12,6 +12,7 @@ import { Link } from "wouter";
 import { Building2, Users, Trophy, Clock, Search, MapPin, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import BrochureForm from "@/components/BrochureForm";
 
 // Custom hook for autoplay
 function useAutoplay(interval: number = 5000) {
@@ -343,9 +344,12 @@ export default function Home() {
                 Schedule a Visit
               </Button>
             </Link>
-            <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto">
-              Download Brochure
-            </Button>
+            <BrochureForm
+              projectName="Hari Hara Estates"
+              brochureUrl="/srisaikakatiya/Hariharas-Sri-Sai-Kakatiya-Brochure.pdf"
+              className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto"
+              buttonText="Download Brochure"
+            />
           </div>
         </div>
       </section>
