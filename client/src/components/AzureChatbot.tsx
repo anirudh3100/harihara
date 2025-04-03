@@ -66,7 +66,7 @@ const AzureChatbot = () => {
         <>
             {/* Chat Button */}
             <button
-                onClick={() => setIsOpen(true)}
+                onClick={() => setIsOpen((prev) => !prev)}
                 className="fixed bottom-4 right-4 bg-[#0066B3] text-white p-4 rounded-full shadow-lg hover:bg-[#42C6FF] transition-colors z-50"
             >
                 <FaComments className="w-6 h-6" />
@@ -139,7 +139,7 @@ const AzureChatbot = () => {
                             <button
                                 type="submit"
                                 disabled={isLoading || !input.trim()}
-                                className="bg-[#42C6FF] text-white p-2 rounded-lg hover:bg-[#0066B3] disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="bg-[#0066B3] text-white p-2 rounded-lg hover:bg-[#0066B3] disabled:opacity-90 disabled:cursor-not-allowed"
                             >
                                 <FaPaperPlane />
                             </button>
