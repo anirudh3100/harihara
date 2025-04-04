@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { FaPaperPlane, FaComments, FaUser, FaTimes } from "react-icons/fa";
 import { sendMessage } from "../services/chatService";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
     role: "user" | "assistant";
@@ -16,12 +17,10 @@ const AzureChatbot = () => {
 
     useEffect(() => {
         if (isOpen && messages.length === 0) {
-            setMessages([
-                {
-                    role: "assistant",
-                    content: "Welcome to Harihara Estates! How may I help you?",
-                },
-            ]);
+            setMessages([{
+                role: "assistant",
+                content: "Welcome to Harihara Estates! How may I help you?"
+            }]);
         }
     }, [isOpen]);
 
@@ -51,10 +50,7 @@ const AzureChatbot = () => {
             setMessages((prev) => [...prev, assistantMessage]);
         } catch (error) {
             console.error("Error:", error);
-            const errorMessage =
-                error instanceof Error
-                    ? error.message
-                    : "An unexpected error occurred";
+            const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred";
             setMessages((prev) => [
                 ...prev,
                 {
@@ -65,29 +61,6 @@ const AzureChatbot = () => {
         } finally {
             setIsLoading(false);
         }
-    };
-
-    // ✅ Renders message content with clickable links
-    const renderMessageContent = (content: string) => {
-        const urlRegex = /(\bhttps?:\/\/[^\s]+)/g;
-        const parts = content.split(urlRegex);
-
-        return parts.map((part, index) => {
-            if (urlRegex.test(part)) {
-                return (
-                    <a
-                        key={index}
-                        href={part}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 underline break-words"
-                    >
-                        {part}
-                    </a>
-                );
-            }
-            return <span key={index}>{part}</span>;
-        });
     };
 
     return (
@@ -109,10 +82,7 @@ const AzureChatbot = () => {
                             <FaComments className="w-5 h-5 mr-2" />
                             <h3 className="font-semibold">Harihara Estates</h3>
                         </div>
-                        <button
-                            onClick={() => setIsOpen(false)}
-                            className="hover:text-gray-300"
-                        >
+                        <button onClick={() => setIsOpen(false)} className="hover:text-gray-300">
                             <FaTimes />
                         </button>
                     </div>
@@ -122,11 +92,7 @@ const AzureChatbot = () => {
                         {messages.map((message, index) => (
                             <div
                                 key={index}
-                                className={`flex ${
-                                    message.role === "user"
-                                        ? "justify-end"
-                                        : "justify-start"
-                                }`}
+                                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                             >
                                 <div
                                     className={`max-w-[80%] rounded-lg p-3 ${
@@ -135,19 +101,26 @@ const AzureChatbot = () => {
                                             : "bg-[#F3F4F6] text-gray-800"
                                     }`}
                                 >
-                                    <div className="flex items-start">
+                                    <div className="flex items-start space-x-2">
                                         {message.role === "user" ? (
-                                            <FaUser className="w-5 h-5 mr-2 mt-1" />
+                                            <FaUser className="w-5 h-5 mt-1" />
                                         ) : (
-                                            <FaComments className="w-5 h-5 mr-2 mt-1" />
+                                            <FaComments className="w-5 h-5 mt-1" />
                                         )}
-                                        <p className="whitespace-pre-wrap break-words">
-                                            {renderMessageContent(message.content)}
-                                        </p>
+                                        <div className="whitespace-pre-wrap">
+                                            <div className="prose prose-sm max-w-none prose-a:text-blue-600 prose-a:underline">
+                                                <ReactMarkdown components={{
+                                                    a: ({ node, ...props }) => <a target="_blank" rel="noopener noreferrer" {...props} />
+                                                }}>
+                                                    {message.content}
+                                                </ReactMarkdown>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
+
                         {isLoading && (
                             <div className="flex justify-start">
                                 <div className="bg-[#555555] text-white rounded-lg p-3">
