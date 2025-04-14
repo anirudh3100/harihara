@@ -13,6 +13,8 @@ import BrochureForm from "@/components/BrochureForm";
 
 const VasantVillas = () => {
   const [activeTab, setActiveTab] = useState("overview");
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
 
   const plans = [
     "/vasantvillas/EAST.png",
@@ -22,24 +24,24 @@ const VasantVillas = () => {
   return (
     <div className="relative min-h-screen bg-white">
       {/* Contact Buttons */}
-      <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-4">
-        <Link to="tel:+919848071234">
-          <Button className="rounded-full bg-[#00827F] p-4 hover:bg-[#00827F]/90">
-            <Phone className="h-6 w-6 text-white" />
+      <div className="fixed bottom-8 left-8 z-50 flex flex-col gap-4">
+        <BrochureForm
+          projectName="Sri Sai Yatika"
+          brochureUrl="/srisaikakatiya/Hariharas-Sri-Sai-Kakatiya-Brochure.pdf"
+        />
+        <a href="tel:+919066832832">
+          <Button className="bg-[#00827F] hover:bg-[#00827F]/90 text-white rounded-full px-6 py-3 shadow-lg flex items-center gap-2">
+            <Phone className="w-5 h-5" />
+            Enquire Now
           </Button>
-        </Link>
-        <Link to="mailto:info@hariharainfra.com">
-          <Button className="rounded-full bg-[#00827F] p-4 hover:bg-[#00827F]/90">
-            <Mail className="h-6 w-6 text-white" />
-          </Button>
-        </Link>
+        </a>
       </div>
 
       {/* Hero Section */}
       <div className="relative h-screen w-full">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/vasantvillas/hero.jpeg')" }}
+          style={{ backgroundImage: "url('/vasantvillas/main2.png')" }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20" />
         </div>
@@ -113,27 +115,24 @@ const VasantVillas = () => {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="sticky top-0 z-20 bg-white shadow-sm">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="flex gap-8 overflow-x-auto py-4">
-            {["overview", "amenities", "floor plans", "location", "gallery"].map(
-              (tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`whitespace-nowrap border-b-2 pb-2 text-sm font-medium transition-colors ${
-                    activeTab === tab
-                      ? "border-[#00827F] text-[#00827F]"
-                      : "border-transparent text-gray-600 hover:text-[#00827F]"
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-wrap gap-4 justify-center mb-12">
+            {['overview', 'amenities', 'floor plans', 'location', 'gallery'].map((tab) => (
+              <Button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-2 rounded-full text-lg capitalize ${activeTab === tab
+                    ? 'bg-[#00827F] text-white'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              )
-            )}
+              >
+                {tab}
+              </Button>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Content Sections */}
       <div className="mx-auto max-w-6xl px-4 py-12">
@@ -150,7 +149,7 @@ const VasantVillas = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/your-video-id"
+                    src="https://www.youtube.com/embed/x23cHKnqIaI"
                     title="Project Overview"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -214,107 +213,38 @@ const VasantVillas = () => {
         {activeTab === "amenities" && (
           <div className="space-y-8">
             <h2 className="text-3xl font-bold">World-Class Amenities</h2>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <div className="group relative overflow-hidden rounded-xl">
-                <img
-                  src="/vasantvillas/main.png"
-                  alt="Vasant Villas"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-0 p-6">
-                  <h3 className="text-xl font-bold text-white">Swimming Pool</h3>
-                  <p className="text-sm text-white/80">
-                    Temperature-controlled pool for year-round enjoyment
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden rounded-xl">
-                <img
-                  src="/vasantvillas/masterplan.jpg"
-                  alt="Master Plan"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-0 p-6">
-                  <h3 className="text-xl font-bold text-white">Modern Gym</h3>
-                  <p className="text-sm text-white/80">
-                    State-of-the-art equipment for fitness enthusiasts
-                  </p>
-                </div>
-              </div>
+            <div className="grid grid-cols-1">
               <div className="group relative overflow-hidden rounded-xl">
                 <img
                   src="/vasantvillas/amenities.png"
-                  alt="Amenities"
-                  className="w-full h-full object-cover"
+                  alt=""
+                  className="h-200 w-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-0 p-6">
-                  <h3 className="text-xl font-bold text-white">24/7 Security</h3>
-                  <p className="text-sm text-white/80">
-                    Advanced security systems for your peace of mind
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden rounded-xl">
-                <img
-                  src="/vasantvillas/amenities/meeting.jpg"
-                  alt="Club House"
-                  className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-0 p-6">
-                  <h3 className="text-xl font-bold text-white">Club House</h3>
-                  <p className="text-sm text-white/80">
-                    Exclusive space for community gatherings
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden rounded-xl">
-                <img
-                  src="/vasantvillas/amenities/indoor.png"
-                  alt="Indoor Games"
-                  className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-0 p-6">
-                  <h3 className="text-xl font-bold text-white">Indoor Games</h3>
-                  <p className="text-sm text-white/80">
-                    Multiple options for indoor entertainment
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden rounded-xl">
-                <img
-                  src="/vasantvillas/amenities/outdoorgames.jpg"
-                  alt="Outdoor Sports"
-                  className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-0 p-6">
-                  <h3 className="text-xl font-bold text-white">Outdoor Sports</h3>
-                  <p className="text-sm text-white/80">
-                    Well-maintained courts for various sports
-                  </p>
                 </div>
               </div>
             </div>
           </div>
         )}
 
+
         {/* Gallery Section */}
         {activeTab === "gallery" && (
           <div className="space-y-8">
             <h2 className="text-3xl font-bold">Project Gallery</h2>
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {[...Array(9)].map((_, index) => (
+              {[...Array(6)].map((_, index) => (
                 <div
                   key={index}
-                  className="group relative aspect-square overflow-hidden rounded-xl"
+                  className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer"
+                  onClick={() =>
+                    setSelectedImage(`/vasantvillas/gallery/${index + 1}.png`)
+                  }
                 >
                   <img
-                    src={`/vasantvillas/gallery/${index + 1}.jpeg`}
+                    src={`/vasantvillas/gallery/${index + 1}.png`}
                     alt={`Gallery Image ${index + 1}`}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
@@ -324,13 +254,27 @@ const VasantVillas = () => {
           </div>
         )}
 
+        {selectedImage && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            onClick={() => setSelectedImage(null)}
+          >
+            <img
+              src={selectedImage}
+              alt="Selected"
+              className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
+            />
+          </div>
+        )}
+
+
         {/* Location Section */}
         {activeTab === "location" && (
           <div className="space-y-8">
             <h2 className="text-3xl font-bold">Prime Location</h2>
             <div className="aspect-video w-full overflow-hidden rounded-xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=your-map-embed-url"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30442.248436467526!2d78.636123!3d17.494092!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9d7a45e98be7%3A0x470d0841689b623!2sGodumakunta%2C%20Secunderabad%2C%20Telangana%20501301%2C%20India!5e0!3m2!1sen!2sus!4v1744632263538!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
