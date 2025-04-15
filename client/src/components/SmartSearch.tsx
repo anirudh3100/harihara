@@ -16,37 +16,37 @@ const projects: Project[] = [
     {
         id: 'sri-sai-kakatiya',
         name: 'Sri Sai Kakatiya',
-        location: 'Uppal',
+        location: 'Uppal in hyderabad',
         type: '2 & 3 BHK',
-        price: 'Starting from 74 lakhs',
+        price: 'Starting from 74 lakhs under 1 cr',
         size: '1335 to 1600 sft',
-        metroDistance: '1.5 km from Uppal Metro'
+        metroDistance: '1.5 km from Uppal Metro near metro'
     },
     {
         id: 'vasant-villas',
         name: 'Vasant Villas',
-        location: 'Keesara',
+        location: 'Keesara in hyderabad',
         type: '4 BHK Villas',
-        price: '₹1.2Cr - ₹1.5Cr',
+        price: '1.2 crore onwards under 1.5 cr',
         size: '187 & 223 Sq Yds'
     },
     {
         id: 'sri-sai-viradhya',
         name: 'Sri Sai Viradhya',
-        location: 'Uppal',
-        type: '3 BHK',
-        price: '1.25 crore onwards',
+        location: 'Uppal in hyderabad',
+        type: '3BHK',
+        price: '1.25 crore onwards under 1.5 cr',
         size: '1820 - 2359 Sft',
-        metroDistance: '2 km from Uppal Metro'
+        metroDistance: '2 km from Uppal Metro near metro'
     },
     {
         id: 'sri-sai-yatika',
         name: 'Sri Sai Yatika',
-        location: 'Uppal',
+        location: 'Uppal in hyderabad',
         type: '2 & 3 BHK',
-        price: 'Starting from 65 lakhs',
+        price: 'Starting from 65 lakhs under 1 cr',
         size: '1335 to 1600 sft',
-        metroDistance: '2.5 km from Uppal Metro'
+        metroDistance: '2.5 km from Uppal Metro near metro'
     }
 ];
 
