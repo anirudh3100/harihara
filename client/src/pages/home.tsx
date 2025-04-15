@@ -9,14 +9,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/lib/data";
 import { Link } from "wouter";
-import { Building2, Users, Trophy, Clock, Search, MapPin, ArrowRight } from "lucide-react";
+import { Building2, Users, Trophy, Clock, MapPin, ArrowRight, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
 import CalendlyWidget from "@/components/CalendlyWidget";
-
 import BrochureForm from "@/components/BrochureForm";
-
 
 // Custom hook for autoplay
 function useAutoplay(interval: number = 5000) {
@@ -91,6 +88,7 @@ export default function Home() {
             <p className="text-xl text-white/90 mb-8">
               Discover luxury living spaces crafted with excellence over 30 years of trusted experience.
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/projects">
                 <Button size="lg" className="bg-[#00827F] hover:bg-[#005f60] text-white px-8 py-6 text-lg w-full sm:w-auto">
