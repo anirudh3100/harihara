@@ -6,47 +6,63 @@ interface Project {
     id: string;
     name: string;
     location: string;
+    location2: string;
     type: string;
     price: string;
+    price2: string;
     size: string;
     metroDistance?: string;
+    path: string;
+
 }
 
 const projects: Project[] = [
     {
         id: 'sri-sai-kakatiya',
         name: 'Sri Sai Kakatiya',
-        location: 'Uppal in hyderabad',
-        type: '2 & 3 BHK',
+        location: 'Kompally in hyderabad',
+        location2: 'Kompally',
+        type: '2BHK & 3BHK',
         price: 'Starting from 74 lakhs under 1 cr',
+        price2: 'Starting from 74 lakhs',
         size: '1335 to 1600 sft',
-        metroDistance: '1.5 km from Uppal Metro near metro'
+        metroDistance: '1.5 km from Uppal Metro near metro',
+        path: '/sri-sai-kakatiya'
     },
     {
         id: 'vasant-villas',
         name: 'Vasant Villas',
         location: 'Keesara in hyderabad',
-        type: '4 BHK Villas',
-        price: '1.2 crore onwards under 1.5 cr',
-        size: '187 & 223 Sq Yds'
+        location2: 'Keesara',
+        type: '4BHK Villas',
+        price: '1.5 crore onwards under 2 cr, over 1 cr',
+        price2: '1.5 crore onwards',
+        size: '187 & 223 Sq Yds',
+        path: '/vasant-villas'
     },
     {
         id: 'sri-sai-viradhya',
         name: 'Sri Sai Viradhya',
         location: 'Uppal in hyderabad',
+        location2: 'Uppal',
         type: '3BHK',
         price: '1.25 crore onwards under 1.5 cr',
+        price2: '1.25 crore onwards',
         size: '1820 - 2359 Sft',
-        metroDistance: '2 km from Uppal Metro near metro'
+        metroDistance: '2 km from Uppal Metro near metro',
+        path: '/sri-sai-viradhya'
     },
     {
         id: 'sri-sai-yatika',
         name: 'Sri Sai Yatika',
         location: 'Uppal in hyderabad',
-        type: '2 & 3 BHK',
+        location2: 'Uppal',
+        type: '3BHK',
         price: 'Starting from 65 lakhs under 1 cr',
+        price2: 'Starting from 65 lakhs',
         size: '1335 to 1600 sft',
-        metroDistance: '2.5 km from Uppal Metro near metro'
+        metroDistance: '2.5 km from Uppal Metro near metro',
+        path: '/sri-sai-yatika'
     }
 ];
 
@@ -89,11 +105,11 @@ const SmartSearch = () => {
             {showSuggestions && suggestions.length > 0 && (
                 <div className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl">
                     {suggestions.map((project) => (
-                        <Link key={project.id} href={`/${project.id}`}>
+                        <Link key={project.id} href={project.path}>
                             <div className="p-3 hover:bg-gray-50 cursor-pointer border-b last:border-b-0">
                                 <div className="font-medium text-[#00827F]">{project.name}</div>
                                 <div className="text-xs text-gray-600 mt-1">
-                                    {project.type} | {project.location} | {project.price}
+                                    {project.type} | {project.location2} | {project.price2}
                                 </div>
                             </div>
                         </Link>
