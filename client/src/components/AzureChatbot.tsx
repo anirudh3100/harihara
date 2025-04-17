@@ -2,11 +2,20 @@ import { useState, useRef, useEffect } from "react";
 import { FaPaperPlane, FaComments, FaUser, FaTimes } from "react-icons/fa";
 import { sendMessage } from "../services/chatService";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 interface Message {
     role: "user" | "assistant";
     content: string;
 }
+
+// Function to convert plain text URLs (starting with /) in assistant messages to Markdown links
+const formatAssistantMessage = (content: string): string => {
+    // Regex to find relative paths starting with / (assuming simple paths)
+    // It looks for a / followed by alphanumeric chars and hyphens, not preceded by ]( or href=", ensuring it's not already a link.
+    const urlRegex = /(?<!\]\(|href=")(\s|^)(\/[a-zA-Z0-9-]+(?:\/[a-zA-Z0-9-]+)*)/g;
+    return content.replace(urlRegex, (match, prefix, url) => `${prefix}[View Page](${url})`);
+};
 
 const AzureChatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +26,9 @@ const AzureChatbot = () => {
 
     useEffect(() => {
         if (isOpen && messages.length === 0) {
-            setMessages([{
-                role: "assistant",
-                content: "Welcome to Harihara Estates! How may I help you?"
+            setMessages([{ 
+                role: "assistant", 
+                content: "Welcome to Harihara Estates! How may I help you?" 
             }]);
         }
     }, [isOpen]);
@@ -45,7 +54,7 @@ const AzureChatbot = () => {
             const response = await sendMessage(input);
             const assistantMessage: Message = {
                 role: "assistant",
-                content: response,
+                content: response, // Raw response
             };
             setMessages((prev) => [...prev, assistantMessage]);
         } catch (error) {
@@ -89,37 +98,47 @@ const AzureChatbot = () => {
 
                     {/* Messages */}
                     <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                        {messages.map((message, index) => (
-                            <div
-                                key={index}
-                                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
-                            >
+                        {messages.map((message, index) => {
+                            const contentToRender = message.role === 'assistant' 
+                                ? formatAssistantMessage(message.content)
+                                : message.content;
+
+                            return (
                                 <div
-                                    className={`max-w-[80%] rounded-lg p-3 ${
-                                        message.role === "user"
-                                            ? "bg-[#42C6FF] text-white"
-                                            : "bg-[#F3F4F6] text-gray-800"
-                                    }`}
+                                    key={index}
+                                    className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                                 >
-                                    <div className="flex items-start space-x-2">
-                                        {message.role === "user" ? (
-                                            <FaUser className="w-5 h-5 mt-1" />
-                                        ) : (
-                                            <FaComments className="w-5 h-5 mt-1" />
-                                        )}
-                                        <div className="whitespace-pre-wrap">
-                                            <div className="prose prose-sm max-w-none prose-a:text-blue-600 prose-a:underline">
-                                                <ReactMarkdown components={{
-                                                    a: ({ node, ...props }) => <a target="_blank" rel="noopener noreferrer" {...props} />
-                                                }}>
-                                                    {message.content}
-                                                </ReactMarkdown>
+                                    <div
+                                        className={`max-w-[80%] rounded-lg p-3 ${message.role === "user"
+                                                ? "bg-[#42C6FF] text-white"
+                                                : "bg-[#F3F4F6] text-gray-800"
+                                            }`}
+                                    >
+                                        <div className="flex items-start space-x-2">
+                                            {message.role === "user" ? (
+                                                <FaUser className="w-5 h-5 mt-1" />
+                                            ) : (
+                                                <FaComments className="w-5 h-5 mt-1" />
+                                            )}
+                                            <div className="whitespace-pre-wrap">
+                                                <div className="prose prose-sm max-w-none prose-a:text-blue-600 prose-a:underline">
+                                                    {/* Configure ReactMarkdown to open links in new tabs */}
+                                                    <ReactMarkdown 
+                                                        rehypePlugins={[rehypeRaw]}
+                                                        components={{
+                                                            a: ({node, ...props}) => 
+                                                                <a {...props} target="_blank" rel="noopener noreferrer" />
+                                                        }}
+                                                    >
+                                                        {contentToRender}
+                                                    </ReactMarkdown>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
 
                         {isLoading && (
                             <div className="flex justify-start">

@@ -165,12 +165,14 @@ export default function News() {
           <div className="max-w-3xl mx-auto">
             <div className="relative group">
               <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
-                <img
-                  className="w-full h-full object-cover"
-                  src="/newsimage.jpeg"
-                  alt="Times Realty Icons"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <a href="/newsimage.jpeg" target="_blank" rel="noopener noreferrer">
+                  <img
+                    className="w-full h-full object-cover"
+                    src="/newsimage.jpeg"
+                    alt="Times Realty Icons"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
               </div>
               <div className="text-center mt-6">
                 <h3 className="text-2xl font-bold text-gray-900">Times Realty Icons</h3>
@@ -178,6 +180,7 @@ export default function News() {
             </div>
           </div>
         </motion.section>
+
       </div>
     </div>
   );

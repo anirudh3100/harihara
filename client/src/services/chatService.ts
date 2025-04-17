@@ -4,8 +4,8 @@ const AZURE_OPENAI_ENDPOINT = import.meta.env.VITE_AZURE_OPENAI_ENDPOINT;
 const AZURE_OPENAI_API_KEY = import.meta.env.VITE_AZURE_OPENAI_API_KEY;
 
 // Swyft.cx chatbot context
-const SWYFTCX_CONTEXT = 
-`You are an AI assistant for Harihara Estates, specializing in real estate and property information. You help customers learn about our properties, amenities, and services.
+const SWYFTCX_CONTEXT =
+    `You are an AI assistant for Harihara Estates, specializing in real estate and property information. You help customers learn about our properties, amenities, and services.
 
 When asked about ongoing projects just give them only project names and locations and type.
 When asked about a property Give the property information first and then give them link to the property page.
@@ -14,7 +14,6 @@ Links to the property pages:
 ●   Sri Sai Viradhya : /sri-sai-viradhya
 ●   Sri Sai Yatika : /sri-sai-yatika
 ●   Vasant Villas : /vasant-villas
-
 
 Company Name: Harihara Estates
 
@@ -40,13 +39,15 @@ Ongoing Projects:
 
 ○	Clubhouse: 12,500 sq. ft.
 
-○	Amenities: Luxurious clubhouse, swimming pool, half basketball court, skating area, car washing facility, elder’s sitting area, Vastu compliant
+○	Amenities: Luxurious clubhouse, swimming pool, half basketball court, skating area, car washing facility, elder's sitting area, Vastu compliant
 
 ○	TS RERA PR No: P02200003663
 
 ○	Possession: Ready to move in 6 months
 
 ○	Price: Not specified
+
+○	Contact: 9066832832
 
 2.	Sri Sai Kakatiya
 
@@ -60,11 +61,13 @@ Ongoing Projects:
 
 ○	Clubhouse: 15,000 sq. ft.
 
-○	Amenities: Luxurious clubhouse, swimming pool, half basketball court, badminton court, gym, dining hall, walking track, children’s play area
+○	Amenities: Luxurious clubhouse, swimming pool, half basketball court, badminton court, gym, dining hall, walking track, children's play area
 
 ○	TS RERA PR No: P02200005594
 
 ○	Price: Starting from ₹70 lakhs
+
+○	Contact: 9343345345
 
 3.	Vasant Villas
 
@@ -84,6 +87,8 @@ Ongoing Projects:
 
 ○	Price: Not specified
 
+○	Contact: 8609696969
+
 4.	Sri Sai Yatika
 
 ○	Location: Peerzadiguda, Hyderabad
@@ -101,6 +106,9 @@ Ongoing Projects:
 ○	TS RERA PR No: P02200007470
 
 ○	Price: Starting from ₹95 lakhs
+
+○	Contact: 9343234234
+
 
 Completed Residential Projects:
 ●	Sri Sai Soukya: Uppal, Hyderabad (Completed in 2020)
@@ -139,9 +147,207 @@ Completed Residential Projects:
 
 ●	Sri Sai Nest: Habsiguda
 
+Response Guidelines:
+1. Format your responses in a clear, structured way:
+   - Use plain text headers in CAPS (no bold, no asterisks)
+   - Start each list item with a bullet point (•)
+   - Use proper spacing between sections
+2. Never use markdown formatting (no **, no *, no #, etc.)
+3. Keep responses concise and easy to read
+4. Include relevant contact information when appropriate
 
+Content Guidelines:
+1. Be professional yet friendly
+2. Provide accurate information about properties, locations, and pricing
+3. For specific pricing, always recommend contacting the sales team
+4. Highlight key features and amenities of properties
+5. Mention location advantages and connectivity
+6. Keep responses focused on real estate queries
 
-Please provide accurate information about our properties and guide customers through their inquiries.`;
+Example Response Format:
+PROJECT DETAILS
+• Property Name: [Name]
+• Location: [Location]
+• Type: [Residential/Commercial]
+• Configuration: [Details]
+
+AREA OVERVIEW
+• [Location details]
+• [Connectivity information]
+• [Nearby landmarks]
+
+KEY FEATURES
+• [Feature 1]
+• [Feature 2]
+• [Feature 3]
+
+CONTACT INFORMATION
+• Phone: [Number]
+• Email: [Email]
+• Best time to call: [Time]`;
+
+const projects = [
+    {
+        name: "Sri Sai Viradhya",
+        location: "Uppal, Hyderabad",
+        description: "Luxurious 3 BHK Apartments",
+        bhks: ["3"],
+        contact: "9066832832",
+        url: "/sri-sai-viradhya"
+    },
+    {
+        name: "Sri Sai Kakatiya",
+        location: "Pocharam-Uppal, Hyderabad",
+        description: "Luxurious 2 BHK & 3 BHK Apartments",
+        bhks: ["2", "3"],
+        contact: "9343345345",
+        url: "/sri-sai-kakatiya"
+    },
+    {
+        name: "Vasant Villas",
+        location: "Keesara, Hyderabad",
+        description: "Luxurious 4 BHK Triplex Gated Community Villas",
+        bhks: ["4"],
+        contact: "8609696969",
+        url: "/vasant-villas"
+    },
+    {
+        name: "Sri Sai Yatika",
+        location: "Peerzadiguda, Hyderabad",
+        description: "Luxurious 3 BHK Apartments",
+        bhks: ["3"],
+        contact: "9343234234",
+        url: "/sri-sai-yatika"
+    }
+];
+
+// --- Levenshtein Distance Implementation ---
+function getLevenshteinDistance(a: string, b: string): number {
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+
+    const matrix = [];
+
+    // increment along the first column of each row
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+
+    // increment each column in the first row
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+
+    // Fill in the rest of the matrix
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) == a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, // substitution
+                                        Math.min(matrix[i][j - 1] + 1, // insertion
+                                                 matrix[i - 1][j] + 1)); // deletion
+            }
+        }
+    }
+
+    return matrix[b.length][a.length];
+}
+
+// --- Fuzzy Matching Helper ---
+function findBestFuzzyMatch(queryWords: string[], options: string[], maxDistanceRatio: number = 0.4): string | null {
+    let bestMatch: string | null = null;
+    let minDistance = Infinity;
+
+    for (const option of options) {
+        const lowerOption = option.toLowerCase();
+        for (const word of queryWords) {
+            const distance = getLevenshteinDistance(word, lowerOption);
+            // Allow distance up to maxDistanceRatio * length, but at least 1 for short words
+            const threshold = Math.max(1, Math.floor(lowerOption.length * maxDistanceRatio));
+
+            if (distance <= threshold && distance < minDistance) {
+                 minDistance = distance;
+                 bestMatch = option; // Return original casing
+            }
+        }
+    }
+    return bestMatch;
+}
+
+function getProjectResponse(message: string) {
+    const msg = message.toLowerCase();
+    const msgWords = msg.split(/\s+/).filter(w => w.length > 0); // Split message into words
+
+    // --- Enhanced Filtering Logic ---
+
+    // 1. Extract potential filters
+    const bhkRegex = /(\d(?:[.,&]?\d)?)\s*bhk/i;
+    const bhkMatch = msg.match(bhkRegex);
+    const requestedBhks = bhkMatch ? bhkMatch[1].split(/[.,&]/).map(b => b.trim()).filter(b => b) : null;
+
+    const locations = ["Uppal", "Pocharam", "Keesara", "Peerzadiguda"];
+    // Find best location match using fuzzy matching (allow ~40% difference)
+    const requestedLocation = findBestFuzzyMatch(msgWords, locations, 0.4);
+
+    // 2. Check if specific filters are present
+    const hasSpecificFilters = requestedBhks || requestedLocation;
+    let filteredProjects = projects;
+    let filterDescription = [];
+
+    if (hasSpecificFilters) {
+        if (requestedBhks) {
+          filteredProjects = filteredProjects.filter(p =>
+            requestedBhks.some(reqBhk => p.bhks.includes(reqBhk))
+          );
+          filterDescription.push(`${requestedBhks.join(' & ')} BHK`);
+        }
+        if (requestedLocation) {
+          // Filter using lowercase comparison based on the *detected* location
+          const lowerRequestedLocation = requestedLocation.toLowerCase();
+          filteredProjects = filteredProjects.filter(p => p.location.toLowerCase().includes(lowerRequestedLocation));
+          filterDescription.push(`in ${requestedLocation}`); // Display original casing
+        }
+
+        // 3. Format response based on filtered results
+        if (filteredProjects.length > 0) {
+          return (
+            `Here are the projects matching your criteria (${filterDescription.join(' ')}):<br/><br/>` +
+            filteredProjects
+              .map(
+                (p) =>
+                   `🏡 <strong>${p.name}</strong> (${p.location})<br/>${p.description}<br/>Contact: <a href="tel:${p.contact}">${p.contact}</a><br/><a href="${p.url}" target="_blank" rel="noopener noreferrer">View More</a>`
+              )
+              .join("<br/><br/>")
+          );
+        } else {
+          // Only provide fallback if *specific* filters yielded no results
+          return `😕 Sorry, we couldn't find any projects matching your criteria (${filterDescription.join(' ')}). You can browse all our ongoing projects: <br/><br/>` + formatAllProjects();
+        }
+    }
+
+    // --- Fallback to General Keywords (Fuzzy Logic) ---
+    const generalKeywords = ["project", "projects", "homes", "property", "properties", "ongoing", "list", "show"];
+    const matchedKeyword = findBestFuzzyMatch(msgWords, generalKeywords, 0.4); // Use fuzzy match
+
+    // Trigger general list only if a general keyword is matched *and* no specific filters were identified
+    if (matchedKeyword) {
+       return `Here are all our ongoing projects:<br/><br/>` + formatAllProjects();
+    }
+
+    // If no relevant query, return null to let the AI handle it
+    return null;
+}
+
+// Helper function to format all projects
+function formatAllProjects() {
+  return projects
+    .map(
+      (p) =>
+        `🏡 <strong>${p.name}</strong> (${p.location})<br/>${p.description}<br/>Contact: <a href="tel:${p.contact}">${p.contact}</a> | <a href="https://wa.me/${p.contact}" target="_blank">Chat via WhatsApp</a><br/><a href="${p.url}" target="_blank" rel="noopener noreferrer">View More</a>`
+    )
+    .join("<br/><br/>");
+}
 
 export const sendMessage = async (message: string) => {
     if (!AZURE_OPENAI_ENDPOINT || !AZURE_OPENAI_API_KEY) {
@@ -150,6 +356,11 @@ export const sendMessage = async (message: string) => {
     }
 
     try {
+        const staticReply = getProjectResponse(message);
+        if (staticReply !== null) { // Check if static response exists
+            return staticReply;
+        }
+
         console.log('Sending request to:', AZURE_OPENAI_ENDPOINT);
         const response = await axios.post(
             `${AZURE_OPENAI_ENDPOINT}/openai/deployments/gpt-4o/chat/completions?api-version=2024-02-15-preview`,
