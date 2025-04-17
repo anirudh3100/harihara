@@ -275,6 +275,14 @@ function findBestFuzzyMatch(queryWords: string[], options: string[], maxDistance
     return bestMatch;
 }
 
+// Helper function to format phone number for tel: links
+function formatPhoneNumber(phone: string): string {
+    // Remove any non-digit characters
+    const digits = phone.replace(/\D/g, '');
+    // Add country code if not present
+    return digits.startsWith('91') ? digits : `91${digits}`;
+}
+
 function getProjectResponse(message: string) {
     const msg = message.toLowerCase();
     const msgWords = msg.split(/\s+/).filter(w => w.length > 0); // Split message into words
@@ -315,8 +323,11 @@ function getProjectResponse(message: string) {
             `Here are the projects matching your criteria (${filterDescription.join(' ')}):<br/><br/>` +
             filteredProjects
               .map(
-                (p) =>
-                   `🏡 <strong>${p.name}</strong> (${p.location})<br/>${p.description}<br/>Contact: <a href="tel:${p.contact}">${p.contact}</a><br/><a href="${p.url}" target="_blank" rel="noopener noreferrer">View More</a>`
+                (p) => {
+                    const formattedPhone = formatPhoneNumber(p.contact);
+                    return `🏡 <strong>${p.name}</strong> (${p.location})<br/>${p.description}<br/>Contact: <a href="tel:${formattedPhone}">${p.contact}</a> 
+                     <a href="https://wa.me/${formattedPhone}" target="_blank">Chat via WhatsApp</a><br/><a href="${p.url}" target="_blank" rel="noopener noreferrer">View More</a>`
+                }
               )
               .join("<br/><br/>")
           );
@@ -343,8 +354,11 @@ function getProjectResponse(message: string) {
 function formatAllProjects() {
   return projects
     .map(
-      (p) =>
-        `🏡 <strong>${p.name}</strong> (${p.location})<br/>${p.description}<br/>Contact: <a href="tel:${p.contact}">${p.contact}</a> | <a href="https://wa.me/${p.contact}" target="_blank">Chat via WhatsApp</a><br/><a href="${p.url}" target="_blank" rel="noopener noreferrer">View More</a>`
+      (p) => {
+          const formattedPhone = formatPhoneNumber(p.contact);
+          return `🏡 <strong>${p.name}</strong> (${p.location})<br/>${p.description}<br/>Contact: <a href="tel:${formattedPhone}">${p.contact}</a> 
+          <a href="https://wa.me/${formattedPhone}" target="_blank">Chat via WhatsApp</a><br/><a href="${p.url}" target="_blank" rel="noopener noreferrer">View More</a>`
+      }
     )
     .join("<br/><br/>");
 }
