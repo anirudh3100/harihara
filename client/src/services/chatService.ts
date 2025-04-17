@@ -325,7 +325,7 @@ function getProjectResponse(message: string) {
               .map(
                 (p) => {
                     const formattedPhone = formatPhoneNumber(p.contact);
-                    return `🏡 <strong>${p.name}</strong> (${p.location})<br/>${p.description}<br/>Contact: <a href="tel:${formattedPhone}">${p.contact}</a> 
+                    return `🏡 <strong>${p.name}</strong> (${p.location})<br/>${p.description}<br/>Contact: ${p.contact} 
                      <a href="https://wa.me/${formattedPhone}" target="_blank">Chat via WhatsApp</a><br/><a href="${p.url}" target="_blank" rel="noopener noreferrer">View More</a>`
                 }
               )

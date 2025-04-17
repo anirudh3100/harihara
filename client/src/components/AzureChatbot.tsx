@@ -23,6 +23,7 @@ const AzureChatbot = () => {
     const [input, setInput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const chatButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         if (isOpen && messages.length === 0) {
@@ -76,22 +77,32 @@ const AzureChatbot = () => {
         <>
             {/* Chat Button */}
             <button
+                ref={chatButtonRef}
                 onClick={() => setIsOpen((prev) => !prev)}
-                className="fixed bottom-4 right-4 bg-[#0066B3] text-white p-3 rounded-full shadow-lg hover:bg-[#42C6FF] transition-colors z-50"
+                className="fixed bottom-4 right-4 bg-[#0066B3] text-white p-4 rounded-full shadow-lg hover:bg-[#42C6FF] transition-colors z-50 group"
             >
-                <FaComments className="w-5 h-5" />
+                <FaComments className="w-7 h-7 transition-transform duration-300 group-hover:scale-110" />
             </button>
 
             {/* Chat Window */}
             {isOpen && (
-                <div className="fixed bottom-16 right-0 w-full sm:w-96 h-[calc(100vh-4rem)] bg-white rounded-t-lg sm:rounded-lg shadow-xl flex flex-col z-50">
+                <div 
+                    className="fixed bottom-16 right-0 w-full sm:w-96 h-[calc(100vh-4rem)] bg-white rounded-t-lg sm:rounded-lg shadow-xl flex flex-col z-50"
+                    style={{
+                        animation: 'emerge 0.3s ease-out forwards',
+                        transformOrigin: 'bottom right'
+                    }}
+                >
                     {/* Header */}
                     <div className="bg-[#0066B3] text-white p-3 rounded-t-lg flex justify-between items-center">
                         <div className="flex items-center">
                             <FaComments className="w-4 h-4 mr-2" />
                             <h3 className="font-semibold text-sm">Harihara Estates</h3>
                         </div>
-                        <button onClick={() => setIsOpen(false)} className="hover:text-gray-300">
+                        <button 
+                            onClick={() => setIsOpen(false)} 
+                            className="hover:text-gray-300 transition-transform duration-200 hover:scale-110"
+                        >
                             <FaTimes className="w-4 h-4" />
                         </button>
                     </div>
